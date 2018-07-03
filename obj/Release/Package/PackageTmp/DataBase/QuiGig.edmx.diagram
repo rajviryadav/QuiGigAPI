@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3926cb15a36647c6a4f804640f4946c4" Name="Diagram1">
+        <EntityTypeShape EntityType="QuiGigAPIModel.Activity" Width="1.5" PointX="5.25" PointY="251.5" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.AllowFileMaxNumber" Width="1.5" PointX="5.25" PointY="264.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.AllowFileMaxSize" Width="1.5" PointX="5.25" PointY="247.625" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.AllowFileType" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.AspNetRole" Width="1.5" PointX="0.75" PointY="123.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="108" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="213.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.AspNetUser" Width="1.5" PointX="3" PointY="136.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CityDetailMaster" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CityMaster" Width="1.5" PointX="6" PointY="164.375" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CityServiceDetail" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CityService" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CityZipCode" Width="1.5" PointX="7.5" PointY="194.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CM" Width="1.5" PointX="5.25" PointY="103.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CoinbaseChargeCreation" Width="1.5" PointX="5.25" PointY="234.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Complaint" Width="1.5" PointX="14.25" PointY="151.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.ComplaintReply" Width="1.5" PointX="19.5" PointY="149" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.ContactUsDetail" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.ContentManagerICO" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Country" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CountryMaster" Width="1.5" PointX="1.5" PointY="164.375" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CurrencyDefination" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CustomerTravellingArea" Width="1.5" PointX="5.25" PointY="230.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.DeactivatedAccount" Width="1.5" PointX="5.25" PointY="211.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Duration" Width="1.5" PointX="5.25" PointY="289.375" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Feature" Width="1.5" PointX="5.25" PointY="285.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.FileUploadSetting" Width="1.5" PointX="7.5" PointY="204.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.GroupMember" Width="1.5" PointX="18.5" PointY="145" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Hired" Width="1.5" PointX="13.5" PointY="146.625" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.HiredHistory" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.InvitedUser" Width="1.5" PointX="17.25" PointY="149" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.JobOptionAttachment" Width="1.5" PointX="21" PointY="153.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.JobQuestionOption" Width="1.5" PointX="18.75" PointY="154" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Job" Width="1.5" PointX="14" PointY="123.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.LocationMaster" Width="1.5" PointX="5.25" PointY="188.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.ManageCampain" Width="1.5" PointX="6" PointY="159.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Message" Width="1.5" PointX="13.25" PointY="140.5" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.MessageGroup" Width="1.5" PointX="16.25" PointY="139.5" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.MessageGroupMember" Width="1.5" PointX="21.5" PointY="144.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.MessageReport" Width="1.5" PointX="5.25" PointY="149.5" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.NewsLetterSubscribe" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.NoServiceFound" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Notification" Width="1.5" PointX="7.5" PointY="189.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.NotificationCategory" Width="1.5" PointX="5.25" PointY="243.625" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.OptionControl" Width="1.5" PointX="5.25" PointY="273.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.OrderForm" Width="1.5" PointX="11.25" PointY="153.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.OrderFormQuestion" Width="1.5" PointX="10.5" PointY="140.5" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.OrderFormQuestionSelected" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.ParameterSetting" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.PaymentSubscription" Width="1.5" PointX="5.25" PointY="226.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.PlanDuration" Width="1.5" PointX="10.5" PointY="191.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.PlanDurationFeature" Width="1.5" PointX="12.75" PointY="238.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.PlanRole" Width="1.5" PointX="7.5" PointY="108.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.ProposalHistory" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Proposal" Width="1.5" PointX="8.25" PointY="148.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.QuestionMaster" Width="1.5" PointX="5.25" PointY="144" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.QuestionOption" Width="1.5" PointX="16.5" PointY="153.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.QuestionType" Width="1.5" PointX="3" PointY="132" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Quig" Width="1.5" PointX="10.75" PointY="5.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.QuigsPackage" Width="1.5" PointX="5.25" PointY="177.375" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Refund" Width="1.5" PointX="11.25" PointY="148.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.ReviewRating" Width="1.5" PointX="5.25" PointY="154.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Right" Width="1.5" PointX="5.25" PointY="97.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.RoleNotification" Width="1.5" PointX="8.25" PointY="139.5" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.SalesEntry" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.SavedOrder" Width="1.5" PointX="16.25" PointY="136.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.SeeLowestBid" Width="1.5" PointX="11.25" PointY="145.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.ServiceQuestion" Width="1.5" PointX="13.25" PointY="135.625" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.Service" Width="1.5" PointX="11.75" PointY="123.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.StateMaster" Width="1.5" PointX="3.75" PointY="164.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.SubscriptionPlan" Width="1.5" PointX="5.25" PointY="92.625" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.TimeZone" Width="1.5" PointX="5.25" PointY="116.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserAddress" Width="1.5" PointX="8.25" PointY="154.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserBankAccount" Width="1.5" PointX="5.25" PointY="281" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserBidHistory" Width="1.5" PointX="5.25" PointY="100.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserBusinessDetail" Width="1.5" PointX="5.25" PointY="268.625" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserCertification" Width="1.5" PointX="5.25" PointY="183" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserDebitCard" Width="1.5" PointX="5.25" PointY="256" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserDetail" Width="1.5" PointX="10.5" PointY="130.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserDoc" Width="1.5" PointX="5.25" PointY="239.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserEducation" Width="1.5" PointX="5.25" PointY="259.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserExperience" Width="1.5" PointX="5.25" PointY="276.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserICOWallet" Width="1.5" PointX="8.25" PointY="144.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserLicence" Width="1.5" PointX="5.25" PointY="207.125" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserNotification" Width="1.5" PointX="9.75" PointY="163.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserPayment" Width="1.5" PointX="7.5" PointY="178.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserPlan" Width="1.5" PointX="5.25" PointY="132.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserPlanHistory" Width="1.5" PointX="8.25" PointY="135.375" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserPortfolio" Width="1.5" PointX="5.25" PointY="221.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserRight" Width="1.5" PointX="7.5" PointY="125.375" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserRolePlan" Width="1.5" PointX="5.25" PointY="138.5" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserServiceArea" Width="1.5" PointX="7.5" PointY="183.5" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserService" Width="1.5" PointX="16.25" PointY="144.875" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.UserWallet" Width="1.5" PointX="14.25" PointY="156.25" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.WhitePaper" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.CityServicesTemp" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="QuiGigAPIModel.StateServiceMap" Width="1.5" PointX="2.75" PointY="11.75" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Activity_FromUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Activity_ToUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_AllowFileMaxNumber_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_AllowFileMaxNumber_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_FileUploadSetting_MaxNumber" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_AllowFileMaxSize_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_AllowFileMaxSize_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_FileUploadSetting_AllowFileMaxSize" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_PlanRoles_AspNetRoles" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_RoleNotification_Role" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserPlan_Role" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserPlanHistory_Role" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserRights_Role" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserRolePlans_Role" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_dbo_AspNetUserClaims_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_CMS_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_CoinbaseChargeCreation_AspNetUsers" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Complaint_FromUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Complaint_ToUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Complaint_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_ComplaintDetails_ReplyBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_CustomerTravellingArea_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_CustomerTravellingArea_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_DeactivatedAccount_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Duration_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Features_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Features_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_GroupMember_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Hired_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_InvitedUser_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Message_FromUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Message_ToUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_MessageGroup_GroupAdmin" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_MessageGroupMember_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_MessageReport_ReportByUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_MessageReport_ReportForUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_MessageReport_ReportToUser" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Notification_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Notification_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_NotificationCategory_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_NotificationCategory_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_OptionControls_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_OrderFormQuestions_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_OrderFormQuestions_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_PaymentSubscription_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_PaymentSubscription_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Proposals_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_QuestionMaster_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_QuestionMaster_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_QuestionOption_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_QuestionOption_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_QuestionSections_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_QuestionSections_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Refund_RefundBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Refund_RefundTo" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_ReviewRating_From" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_ReviewRating_To" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Rights_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_RoleNotification_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_SavedOrder_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_SeeLowestBid_Users" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_ServiceQuestions_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_ServiceQuestions_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_SubscriptionPlans_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_SubscriptionPlans_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_TimeZone_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_TimeZone_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserAddress_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserBankAccount_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserBankAccount_VerifiedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserBidHistory_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserBisinessDetail_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserCertification_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserDebitCards_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserDebitCards_VerifiedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserDetail_CreatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserDetail_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserDetail_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserDocs_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserDocs_VerifiedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserEducation_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserExperience_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserICOWallet_AspNetUsers1" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserLicence_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserNotification_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserNotification_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserPayment_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserPlan_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserPlanHistory_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserPortfolio_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserRights_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserRolePlans_UpdatedBy" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserServiceArea_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserServices_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserWallet_User" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_CityMaster_StateMaster" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserAddress_CityMaster" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_CityZipCode_LocationMaster" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_ComplaintDetails_Complaint" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_StateMaster_CountryMaster" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserAddress_CountryMaster" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserServiceArea_CustomerTravellingArea" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_PlanDuration_Duration" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_PlanDurationFeatures_Features" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_FileUploadSetting_Question" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_GroupMember_Group" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Hired_Proposals" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_InvitedUser_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_JobOptionAttachment_JobQuestionOptions" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_JobQuestionOptions_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_JobQuestionOptions_Option" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__ReviewRat__JobID__1293BD5E" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__ReviewRat__JobID__45A94D10" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__ReviewRat__JobID__47C69FAC" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Jobs_Service" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Message_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_MessageGroup_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_MessageReport_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Proposals_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Refund_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_SavedOrder_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_SeeLowestBid_Jobs" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserServiceArea_Location" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserICOWallet_ManageCampain" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Message_MessageGroup" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_MessageGroupMember_MessageGroup" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Notification_NotificationCategory" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_RoleNotification_Notification" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserNotification_Notification" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_OrderForm_Services" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_OrderFormQuestions_OrderForm" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_OrderFormQuestions_QuestionMaster" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserPayment_PaymentSubscription" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_PlanDuration_Plan" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_PlanDurationFeatures_PlanDuration" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_PlanRoles_SubscriptionPlans" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_QuestionMaster_QuestionType" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_QuestionOption_Question" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__UserPayme__Packa__38B96646" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__UserPayme__Packa__469D7149" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__UserPayme__Packa__48BAC3E5" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__UserWalle__Packa__47919582" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__UserWalle__Packa__49AEE81E" />
+        <AssociationConnector Association="QuiGigAPIModel.FK__UserWalle__Packa__4AD81681" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserRights_Rights" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_ServiceQuestions_Services" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_Services_Services" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserServices_Services" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserAddress_StateMaster" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserDetail_TimeZone" />
+        <AssociationConnector Association="QuiGigAPIModel.FK_UserPayment_UserPlan" />
+        <AssociationConnector Association="QuiGigAPIModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

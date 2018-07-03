@@ -1,0 +1,274 @@
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\ApplicationInsights.config
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\csc.exe
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\System.Collections.Immutable.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\System.Reflection.Metadata.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\vbc.exe
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\VBCSCompiler.exe
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\roslyn\VBCSCompiler.exe.config
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.dll.config
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.pdb
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Antlr3.Runtime.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\EntityFramework.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\EntityFramework.SqlServer.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.DependencyCollector.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Web.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.WindowsServer.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.ApplicationInsights.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Google.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Web.Infrastructure.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Newtonsoft.Json.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Owin.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Net.Http.Formatting.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Helpers.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.Owin.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.WebHost.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Mvc.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Optimization.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Razor.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Deployment.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Razor.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\WebGrease.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.DependencyCollector.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Web.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.WindowsServer.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.ApplicationInsights.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Newtonsoft.Json.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Net.Http.Formatting.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Helpers.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.WebHost.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Mvc.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Optimization.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Razor.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Deployment.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Razor.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Antlr3.Runtime.pdb
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\EntityFramework.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\EntityFramework.SqlServer.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Google.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.Owin.xml
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.dll
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.pdb
+D:\Rajvir Project\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.csprojResolveAssemblyReference.cache
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\ApplicationInsights.config
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\csc.exe
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\vbc.exe
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.dll.config
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.pdb
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Antlr3.Runtime.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\EntityFramework.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Web.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Newtonsoft.Json.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Owin.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Helpers.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.Owin.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Mvc.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Optimization.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Razor.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\WebGrease.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Web.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Newtonsoft.Json.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Helpers.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Mvc.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Optimization.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Razor.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Antlr3.Runtime.pdb
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\EntityFramework.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.Owin.xml
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.dll
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.pdb
+C:\Users\Rajvir\Desktop\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.csprojResolveAssemblyReference.cache
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\ApplicationInsights.config
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\csc.exe
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\System.Collections.Immutable.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\System.Reflection.Metadata.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\vbc.exe
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\VBCSCompiler.exe
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\roslyn\VBCSCompiler.exe.config
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.dll.config
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\QuiGigAPI.pdb
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Antlr3.Runtime.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\EntityFramework.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\EntityFramework.SqlServer.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.DependencyCollector.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Web.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.WindowsServer.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.ApplicationInsights.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Google.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Web.Infrastructure.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Newtonsoft.Json.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Owin.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Net.Http.Formatting.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Helpers.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.Owin.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.WebHost.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Mvc.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Optimization.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Razor.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Deployment.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Razor.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\WebGrease.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.DependencyCollector.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.Web.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AI.WindowsServer.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.ApplicationInsights.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Newtonsoft.Json.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Net.Http.Formatting.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Helpers.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.WebHost.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Mvc.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Optimization.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Razor.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Deployment.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.WebPages.Razor.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Antlr3.Runtime.pdb
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\EntityFramework.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\EntityFramework.SqlServer.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Google.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\System.Web.Http.Owin.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.pdb
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Facebook.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Facebook.xml
+E:\Server Project\QuiGigAPI\QuiGigAPI\bin\RestSharp.dll

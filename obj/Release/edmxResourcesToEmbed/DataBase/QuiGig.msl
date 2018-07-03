@@ -1,0 +1,1838 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuiGigAPIModelStoreContainer" CdmEntityContainer="QuiGigAPIEntities">
+    <FunctionImportMapping FunctionImportName="GetActiveUserChat" FunctionName="QuiGigAPIModel.Store.GetActiveUserChat" />
+    <FunctionImportMapping FunctionImportName="GetAllConnectedUserList" FunctionName="QuiGigAPIModel.Store.GetAllConnectedUserList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetAllConnectedUserList_Result1">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserShortName" ColumnName="UserShortName" />
+          <ScalarProperty Name="MsgDate" ColumnName="MsgDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetChildServiceByCity" FunctionName="QuiGigAPIModel.Store.GetChildServiceByCity" />
+    <FunctionImportMapping FunctionImportName="GetConnectedUserByJobId" FunctionName="QuiGigAPIModel.Store.GetConnectedUserByJobId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetConnectedUserByJobId_Result1">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="MsgDate" ColumnName="MsgDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCurrentOrderList" FunctionName="QuiGigAPIModel.Store.GetCurrentOrderList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetCurrentOrderList_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="CurrentProposalCount" ColumnName="CurrentProposalCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetExistingPostedOrderList" FunctionName="QuiGigAPIModel.Store.GetExistingPostedOrderList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetExistingPostedOrderList_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetExpireOrderList" FunctionName="QuiGigAPIModel.Store.GetExpireOrderList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetExpireOrderList_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="JobExpireDate" ColumnName="JobExpireDate" />
+          <ScalarProperty Name="CurrentProposalCount" ColumnName="CurrentProposalCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetJobDetail" FunctionName="QuiGigAPIModel.Store.GetJobDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetJobDetail_Result1">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetLatestOrderList" FunctionName="QuiGigAPIModel.Store.GetLatestOrderList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetLatestOrderList_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="CurrentProposalCount" ColumnName="CurrentProposalCount" />
+          <ScalarProperty Name="JobExpireDate" ColumnName="JobExpireDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMessageChatWithUser" FunctionName="QuiGigAPIModel.Store.GetMessageChatWithUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetMessageChatWithUser_Result1">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="BlockByID" ColumnName="BlockByID" />
+          <ScalarProperty Name="BlockBy" ColumnName="BlockBy" />
+          <ScalarProperty Name="JobCompleted" ColumnName="JobCompleted" />
+          <ScalarProperty Name="HiredStatus" ColumnName="HiredStatus" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMessageNotification" FunctionName="QuiGigAPIModel.Store.GetMessageNotification">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetMessageNotification_Result1">
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="FromUserID" ColumnName="FromUserID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="rowNum" ColumnName="rowNum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetNearService" FunctionName="QuiGigAPIModel.Store.GetNearService">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetNearService_Result1">
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetNewOrderList" FunctionName="QuiGigAPIModel.Store.GetNewOrderList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetNewOrderList_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ServicePic" ColumnName="ServicePic" />
+          <ScalarProperty Name="CurrentProposalCount" ColumnName="CurrentProposalCount" />
+          <ScalarProperty Name="ReceivedBid" ColumnName="ReceivedBid" />
+          <ScalarProperty Name="JobExpireDate" ColumnName="JobExpireDate" />
+          <ScalarProperty Name="PostedDays" ColumnName="PostedDays" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetOtherSPCityList" FunctionName="QuiGigAPIModel.Store.GetOtherSPCityList" />
+    <FunctionImportMapping FunctionImportName="GetParentServiceByCity" FunctionName="QuiGigAPIModel.Store.GetParentServiceByCity" />
+    <FunctionImportMapping FunctionImportName="GetPastOrderList" FunctionName="QuiGigAPIModel.Store.GetPastOrderList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetPastOrderList_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="CurrentProposalCount" ColumnName="CurrentProposalCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPopularSPById" FunctionName="QuiGigAPIModel.Store.GetPopularSPById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetPopularSPById_Result1">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="HiredCount" ColumnName="HiredCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProposalUserList" FunctionName="QuiGigAPIModel.Store.GetProposalUserList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetProposalUserList_Result1">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsBidLock" ColumnName="IsBidLock" />
+          <ScalarProperty Name="MyGigsCount" ColumnName="MyGigsCount" />
+          <ScalarProperty Name="MyBidsCount" ColumnName="MyBidsCount" />
+          <ScalarProperty Name="ThumbsUp" ColumnName="ThumbsUp" />
+          <ScalarProperty Name="ThumbsDown" ColumnName="ThumbsDown" />
+          <ScalarProperty Name="CustomerStatus" ColumnName="CustomerStatus" />
+          <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+          <ScalarProperty Name="IsUnlimitedBidView" ColumnName="IsUnlimitedBidView" />
+          <ScalarProperty Name="SPStatus" ColumnName="SPStatus" />
+          <ScalarProperty Name="HiredStatus" ColumnName="HiredStatus" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+          <ScalarProperty Name="IsInvited" ColumnName="IsInvited" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetQuestionServiceList" FunctionName="QuiGigAPIModel.Store.GetQuestionServiceList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetQuestionServiceList_Result1">
+          <ScalarProperty Name="QuestionTitle" ColumnName="QuestionTitle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReviewRatingList" FunctionName="QuiGigAPIModel.Store.GetReviewRatingList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetReviewRatingList_Result1">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ThumbsValue" ColumnName="ThumbsValue" />
+          <ScalarProperty Name="Review" ColumnName="Review" />
+          <ScalarProperty Name="WorkAgain" ColumnName="WorkAgain" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSavedOrderList" FunctionName="QuiGigAPIModel.Store.GetSavedOrderList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetSavedOrderList_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="JobExpireDate" ColumnName="JobExpireDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStartMessageChatWithUser" FunctionName="QuiGigAPIModel.Store.GetStartMessageChatWithUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetStartMessageChatWithUser_Result1">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="BlockByID" ColumnName="BlockByID" />
+          <ScalarProperty Name="BlockBy" ColumnName="BlockBy" />
+          <ScalarProperty Name="ToUserCreated" ColumnName="ToUserCreated" />
+          <ScalarProperty Name="FromUserCreated" ColumnName="FromUserCreated" />
+          <ScalarProperty Name="MyGigsCount" ColumnName="MyGigsCount" />
+          <ScalarProperty Name="MyBidsCount" ColumnName="MyBidsCount" />
+          <ScalarProperty Name="ThumbsUp" ColumnName="ThumbsUp" />
+          <ScalarProperty Name="ThumbsDown" ColumnName="ThumbsDown" />
+          <ScalarProperty Name="FromUserImage" ColumnName="FromUserImage" />
+          <ScalarProperty Name="ToUserImage" ColumnName="ToUserImage" />
+          <ScalarProperty Name="JobCompleted" ColumnName="JobCompleted" />
+          <ScalarProperty Name="HiredStatus" ColumnName="HiredStatus" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserList" FunctionName="QuiGigAPIModel.Store.GetUserList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetUserList_Result1">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="Quigs" ColumnName="Quigs" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+          <ScalarProperty Name="EmailVerified" ColumnName="EmailVerified" />
+          <ScalarProperty Name="LockoutDate" ColumnName="LockoutDate" />
+          <ScalarProperty Name="UserPlan" ColumnName="UserPlan" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserMessageList" FunctionName="QuiGigAPIModel.Store.GetUserMessageList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetUserMessageList_Result1">
+          <ScalarProperty Name="FromUserID" ColumnName="FromUserID" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="ToUserID" ColumnName="ToUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ToUserImage" ColumnName="ToUserImage" />
+          <ScalarProperty Name="FromUserImage" ColumnName="FromUserImage" />
+          <ScalarProperty Name="FromUserShortName" ColumnName="FromUserShortName" />
+          <ScalarProperty Name="ToUserShortName" ColumnName="ToUserShortName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MessageChat" FunctionName="QuiGigAPIModel.Store.MessageChat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.MessageChat_Result1">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="BlockByID" ColumnName="BlockByID" />
+          <ScalarProperty Name="BlockBy" ColumnName="BlockBy" />
+          <ScalarProperty Name="ToUserCreated" ColumnName="ToUserCreated" />
+          <ScalarProperty Name="FromUserCreated" ColumnName="FromUserCreated" />
+          <ScalarProperty Name="MyGigsCount" ColumnName="MyGigsCount" />
+          <ScalarProperty Name="MyBidsCount" ColumnName="MyBidsCount" />
+          <ScalarProperty Name="ThumbsUp" ColumnName="ThumbsUp" />
+          <ScalarProperty Name="ThumbsDown" ColumnName="ThumbsDown" />
+          <ScalarProperty Name="JobCompleted" ColumnName="JobCompleted" />
+          <ScalarProperty Name="HiredStatus" ColumnName="HiredStatus" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+          <ScalarProperty Name="FromUserImage" ColumnName="FromUserImage" />
+          <ScalarProperty Name="ToUserImage" ColumnName="ToUserImage" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_AdminQuigsStats" FunctionName="QuiGigAPIModel.Store.proc_AdminQuigsStats">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.proc_AdminQuigsStats_Result1">
+          <ScalarProperty Name="TotalQuigs" ColumnName="TotalQuigs" />
+          <ScalarProperty Name="SoldQuigs" ColumnName="SoldQuigs" />
+          <ScalarProperty Name="AvailableQuigs" ColumnName="AvailableQuigs" />
+          <ScalarProperty Name="SoftTarget" ColumnName="SoftTarget" />
+          <ScalarProperty Name="HardTarget" ColumnName="HardTarget" />
+          <ScalarProperty Name="CurrentQuigsVal" ColumnName="CurrentQuigsVal" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_GigsSaleReport" FunctionName="QuiGigAPIModel.Store.proc_GigsSaleReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.proc_GigsSaleReport_Result1">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="QuigsSale" ColumnName="QuigsSale" />
+          <ScalarProperty Name="PaymentFrom" ColumnName="PaymentFrom" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SaleStatus" ColumnName="SaleStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_InsertCityZipcode" FunctionName="QuiGigAPIModel.Store.proc_InsertCityZipcode" />
+    <FunctionImportMapping FunctionImportName="Proc_SetUserDefaultNotifications" FunctionName="QuiGigAPIModel.Store.Proc_SetUserDefaultNotifications" />
+    <FunctionImportMapping FunctionImportName="proc_UpdateServiceImgName" FunctionName="QuiGigAPIModel.Store.proc_UpdateServiceImgName" />
+    <FunctionImportMapping FunctionImportName="SplitString" FunctionName="QuiGigAPIModel.Store.SplitString" />
+    <FunctionImportMapping FunctionImportName="GetUserDetailById" FunctionName="QuiGigAPIModel.Store.GetUserDetailById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuiGigAPIModel.GetUserDetailById_Result2">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="BidPoints" ColumnName="BidPoints" />
+          <ScalarProperty Name="ProfessionalTitle" ColumnName="ProfessionalTitle" />
+          <ScalarProperty Name="ProfessionalDescription" ColumnName="ProfessionalDescription" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="ThumbsUp" ColumnName="ThumbsUp" />
+          <ScalarProperty Name="ThumbsDown" ColumnName="ThumbsDown" />
+          <ScalarProperty Name="MyGigsCount" ColumnName="MyGigsCount" />
+          <ScalarProperty Name="MyBidsCount" ColumnName="MyBidsCount" />
+          <ScalarProperty Name="UserShortName" ColumnName="UserShortName" />
+          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Activity">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="RedirectPath" ColumnName="RedirectPath" />
+          <ScalarProperty Name="IsNotification" ColumnName="IsNotification" />
+          <ScalarProperty Name="ActivityType" ColumnName="ActivityType" />
+          <ScalarProperty Name="ToID" ColumnName="ToID" />
+          <ScalarProperty Name="FromID" ColumnName="FromID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowFileMaxNumbers">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.AllowFileMaxNumber">
+        <MappingFragment StoreEntitySet="AllowFileMaxNumber">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowFileMaxSizes">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.AllowFileMaxSize">
+        <MappingFragment StoreEntitySet="AllowFileMaxSize">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowFileTypes">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.AllowFileType">
+        <MappingFragment StoreEntitySet="AllowFileType">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityDetailMasters">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CityDetailMaster">
+        <MappingFragment StoreEntitySet="CityDetailMaster">
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+          <ScalarProperty Name="PageH2Content" ColumnName="PageH2Content" />
+          <ScalarProperty Name="PageH1Content" ColumnName="PageH1Content" />
+          <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+          <ScalarProperty Name="CityDescription" ColumnName="CityDescription" />
+          <ScalarProperty Name="ZipCodeStr" ColumnName="ZipCodeStr" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="CityServiceDetailId" ColumnName="CityServiceDetailId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityMasters">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CityMaster">
+        <MappingFragment StoreEntitySet="CityMaster">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityServiceDetails">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CityServiceDetail">
+        <MappingFragment StoreEntitySet="CityServiceDetail">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityServices">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CityService">
+        <MappingFragment StoreEntitySet="CityServices">
+          <ScalarProperty Name="UploadUniqueKey" ColumnName="UploadUniqueKey" />
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+          <ScalarProperty Name="PageH2Content" ColumnName="PageH2Content" />
+          <ScalarProperty Name="PageH1Content" ColumnName="PageH1Content" />
+          <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="ServiceCityContent" ColumnName="ServiceCityContent" />
+          <ScalarProperty Name="ZipCodeStr" ColumnName="ZipCodeStr" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ParentServiceName" ColumnName="ParentServiceName" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityZipCodes">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CityZipCode">
+        <MappingFragment StoreEntitySet="CityZipCode">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CM">
+        <MappingFragment StoreEntitySet="CMS">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="PageContent" ColumnName="PageContent" />
+          <ScalarProperty Name="MetaOwner" ColumnName="MetaOwner" />
+          <ScalarProperty Name="MetaAuthor" ColumnName="MetaAuthor" />
+          <ScalarProperty Name="MetaContent" ColumnName="MetaContent" />
+          <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+          <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoinbaseChargeCreations">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CoinbaseChargeCreation">
+        <MappingFragment StoreEntitySet="CoinbaseChargeCreation">
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="price_local" ColumnName="price_local" />
+          <ScalarProperty Name="price_litecoin" ColumnName="price_litecoin" />
+          <ScalarProperty Name="price_bitcoincash" ColumnName="price_bitcoincash" />
+          <ScalarProperty Name="price_ethereum" ColumnName="price_ethereum" />
+          <ScalarProperty Name="price_bitcoin" ColumnName="price_bitcoin" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="hosted_url" ColumnName="hosted_url" />
+          <ScalarProperty Name="expires_at" ColumnName="expires_at" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Complaint">
+        <MappingFragment StoreEntitySet="Complaint">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ComplaintStatus" ColumnName="ComplaintStatus" />
+          <ScalarProperty Name="ComplaintMessage" ColumnName="ComplaintMessage" />
+          <ScalarProperty Name="ComplaintHeading" ColumnName="ComplaintHeading" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+          <ScalarProperty Name="FromID" ColumnName="FromID" />
+          <ScalarProperty Name="ToID" ColumnName="ToID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplaintReplies">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.ComplaintReply">
+        <MappingFragment StoreEntitySet="ComplaintReplies">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ReplyByID" ColumnName="ReplyByID" />
+          <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+          <ScalarProperty Name="ComplaintID" ColumnName="ComplaintID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUsDetails">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.ContactUsDetail">
+        <MappingFragment StoreEntitySet="ContactUsDetail">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentManagerICOes">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.ContentManagerICO">
+        <MappingFragment StoreEntitySet="ContentManagerICO">
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="IsShowVideo" ColumnName="IsShowVideo" />
+          <ScalarProperty Name="VideoTagLine" ColumnName="VideoTagLine" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+          <ScalarProperty Name="H2Tag" ColumnName="H2Tag" />
+          <ScalarProperty Name="H1StrongText" ColumnName="H1StrongText" />
+          <ScalarProperty Name="H1BoldText" ColumnName="H1BoldText" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="ThreeCharCountryCode" ColumnName="ThreeCharCountryCode" />
+          <ScalarProperty Name="TwoCharCountryCode" ColumnName="TwoCharCountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountryMasters">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CountryMaster">
+        <MappingFragment StoreEntitySet="CountryMaster">
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CurrencyDefinations">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CurrencyDefination">
+        <MappingFragment StoreEntitySet="CurrencyDefination">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="BonusCoin" ColumnName="BonusCoin" />
+          <ScalarProperty Name="QuigsValue" ColumnName="QuigsValue" />
+          <ScalarProperty Name="CurrencyValue" ColumnName="CurrencyValue" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerTravellingAreas">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CustomerTravellingArea">
+        <MappingFragment StoreEntitySet="CustomerTravellingArea">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="MilesValue" ColumnName="MilesValue" />
+          <ScalarProperty Name="MilesName" ColumnName="MilesName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeactivatedAccounts">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.DeactivatedAccount">
+        <MappingFragment StoreEntitySet="DeactivatedAccount">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Durations">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Duration">
+        <MappingFragment StoreEntitySet="Duration">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Features">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Feature">
+        <MappingFragment StoreEntitySet="Features">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="FeatureDescription" ColumnName="FeatureDescription" />
+          <ScalarProperty Name="FeatureTitle" ColumnName="FeatureTitle" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileUploadSettings">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.FileUploadSetting">
+        <MappingFragment StoreEntitySet="FileUploadSetting">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="FileTypeID" ColumnName="FileTypeID" />
+          <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+          <ScalarProperty Name="MaxNumberID" ColumnName="MaxNumberID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupMembers">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.GroupMember">
+        <MappingFragment StoreEntitySet="GroupMember">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hireds">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Hired">
+        <MappingFragment StoreEntitySet="Hired">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="StatusByUserID" ColumnName="StatusByUserID" />
+          <ScalarProperty Name="HiredDate" ColumnName="HiredDate" />
+          <ScalarProperty Name="HiredStatus" ColumnName="HiredStatus" />
+          <ScalarProperty Name="HiredMessage" ColumnName="HiredMessage" />
+          <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HiredHistories">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.HiredHistory">
+        <MappingFragment StoreEntitySet="HiredHistory">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="StatusByUserID" ColumnName="StatusByUserID" />
+          <ScalarProperty Name="HiredDate" ColumnName="HiredDate" />
+          <ScalarProperty Name="HiredStatus" ColumnName="HiredStatus" />
+          <ScalarProperty Name="HiredMessage" ColumnName="HiredMessage" />
+          <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvitedUsers">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.InvitedUser">
+        <MappingFragment StoreEntitySet="InvitedUser">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobOptionAttachments">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.JobOptionAttachment">
+        <MappingFragment StoreEntitySet="JobOptionAttachment">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="AttachmentSize" ColumnName="AttachmentSize" />
+          <ScalarProperty Name="AttachmentType" ColumnName="AttachmentType" />
+          <ScalarProperty Name="AttachmentExt" ColumnName="AttachmentExt" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="NewName" ColumnName="NewName" />
+          <ScalarProperty Name="OriginalName" ColumnName="OriginalName" />
+          <ScalarProperty Name="JobQuestionOptionsID" ColumnName="JobQuestionOptionsID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobQuestionOptions">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.JobQuestionOption">
+        <MappingFragment StoreEntitySet="JobQuestionOptions">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OtherAnswer" ColumnName="OtherAnswer" />
+          <ScalarProperty Name="OptionID" ColumnName="OptionID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Job">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="JobExpireDate" ColumnName="JobExpireDate" />
+          <ScalarProperty Name="IsUnlimitedBidView" ColumnName="IsUnlimitedBidView" />
+          <ScalarProperty Name="IsPublish" ColumnName="IsPublish" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationMasters">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.LocationMaster">
+        <MappingFragment StoreEntitySet="LocationMaster">
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Longtitude" ColumnName="Longtitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManageCampains">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.ManageCampain">
+        <MappingFragment StoreEntitySet="ManageCampain">
+          <ScalarProperty Name="SellOutToken" ColumnName="SellOutToken" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IncreaseBy" ColumnName="IncreaseBy" />
+          <ScalarProperty Name="TokenPrice" ColumnName="TokenPrice" />
+          <ScalarProperty Name="TokenSize" ColumnName="TokenSize" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="CampainName" ColumnName="CampainName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ToID" ColumnName="ToID" />
+          <ScalarProperty Name="FromID" ColumnName="FromID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageGroups">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.MessageGroup">
+        <MappingFragment StoreEntitySet="MessageGroup">
+          <ScalarProperty Name="UniqueGroupName" ColumnName="UniqueGroupName" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="GroupAdminID" ColumnName="GroupAdminID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageGroupMembers">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.MessageGroupMember">
+        <MappingFragment StoreEntitySet="MessageGroupMember">
+          <ScalarProperty Name="BlockByID" ColumnName="BlockByID" />
+          <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageReports">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.MessageReport">
+        <MappingFragment StoreEntitySet="MessageReport">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ReportToId" ColumnName="ReportToId" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ReportForId" ColumnName="ReportForId" />
+          <ScalarProperty Name="ReportById" ColumnName="ReportById" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsLetterSubscribes">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.NewsLetterSubscribe">
+        <MappingFragment StoreEntitySet="NewsLetterSubscribe">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsUnSubscribe" ColumnName="IsUnSubscribe" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoServiceFounds">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.NoServiceFound">
+        <MappingFragment StoreEntitySet="NoServiceFound">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="IsCustomer" ColumnName="IsCustomer" />
+          <ScalarProperty Name="IsServiceProvider" ColumnName="IsServiceProvider" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NotificationCatID" ColumnName="NotificationCatID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationCategories">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.NotificationCategory">
+        <MappingFragment StoreEntitySet="NotificationCategory">
+          <ScalarProperty Name="UniqueName" ColumnName="UniqueName" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OptionControls">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.OptionControl">
+        <MappingFragment StoreEntitySet="OptionControls">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UniqueName" ColumnName="UniqueName" />
+          <ScalarProperty Name="ControlName" ColumnName="ControlName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderForms">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.OrderForm">
+        <MappingFragment StoreEntitySet="OrderForm">
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SectionTitle" ColumnName="SectionTitle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderFormQuestions">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.OrderFormQuestion">
+        <MappingFragment StoreEntitySet="OrderFormQuestions">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderFormQuestionSelecteds">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.OrderFormQuestionSelected">
+        <MappingFragment StoreEntitySet="OrderFormQuestionSelected">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParameterSettings">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.ParameterSetting">
+        <MappingFragment StoreEntitySet="ParameterSetting">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="UniqueName" ColumnName="UniqueName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentSubscriptions">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.PaymentSubscription">
+        <MappingFragment StoreEntitySet="PaymentSubscription">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EnableExpressCheckout" ColumnName="EnableExpressCheckout" />
+          <ScalarProperty Name="GetwayLoginID" ColumnName="GetwayLoginID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanDurations">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.PlanDuration">
+        <MappingFragment StoreEntitySet="PlanDuration">
+          <ScalarProperty Name="FreeTrial" ColumnName="FreeTrial" />
+          <ScalarProperty Name="DurationAmount" ColumnName="DurationAmount" />
+          <ScalarProperty Name="DurationValue" ColumnName="DurationValue" />
+          <ScalarProperty Name="DurationID" ColumnName="DurationID" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanDurationFeatures">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.PlanDurationFeature">
+        <MappingFragment StoreEntitySet="PlanDurationFeatures">
+          <ScalarProperty Name="FeatureValue" ColumnName="FeatureValue" />
+          <ScalarProperty Name="IsFeeAndUnlimited" ColumnName="IsFeeAndUnlimited" />
+          <ScalarProperty Name="PlanDurationID" ColumnName="PlanDurationID" />
+          <ScalarProperty Name="FeatureID" ColumnName="FeatureID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanRoles">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.PlanRole">
+        <MappingFragment StoreEntitySet="PlanRoles">
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProposalHistories">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.ProposalHistory">
+        <MappingFragment StoreEntitySet="ProposalHistory">
+          <ScalarProperty Name="IsBidLock" ColumnName="IsBidLock" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CustomerStatus" ColumnName="CustomerStatus" />
+          <ScalarProperty Name="SPStatus" ColumnName="SPStatus" />
+          <ScalarProperty Name="ProposalStatus" ColumnName="ProposalStatus" />
+          <ScalarProperty Name="BidPoint" ColumnName="BidPoint" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proposals">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Proposal">
+        <MappingFragment StoreEntitySet="Proposals">
+          <ScalarProperty Name="IsBidLock" ColumnName="IsBidLock" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="CustomerStatus" ColumnName="CustomerStatus" />
+          <ScalarProperty Name="SPStatus" ColumnName="SPStatus" />
+          <ScalarProperty Name="ProposalStatus" ColumnName="ProposalStatus" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BidPoint" ColumnName="BidPoint" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionMasters">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.QuestionMaster">
+        <MappingFragment StoreEntitySet="QuestionMaster">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LinerScaleLabel" ColumnName="LinerScaleLabel" />
+          <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="QuestionDescription" ColumnName="QuestionDescription" />
+          <ScalarProperty Name="QuestionTitle" ColumnName="QuestionTitle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionOptions">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.QuestionOption">
+        <MappingFragment StoreEntitySet="QuestionOption">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Placeholder" ColumnName="Placeholder" />
+          <ScalarProperty Name="IsOther" ColumnName="IsOther" />
+          <ScalarProperty Name="OptionHeading" ColumnName="OptionHeading" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionTypes">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.QuestionType">
+        <MappingFragment StoreEntitySet="QuestionType">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quigs">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Quig">
+        <MappingFragment StoreEntitySet="Quigs">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="TargetType" ColumnName="TargetType" />
+          <ScalarProperty Name="MaxQuigs" ColumnName="MaxQuigs" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuigsPackages">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.QuigsPackage">
+        <MappingFragment StoreEntitySet="QuigsPackages">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+          <ScalarProperty Name="QuigsAmount" ColumnName="QuigsAmount" />
+          <ScalarProperty Name="Quigs" ColumnName="Quigs" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refunds">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Refund">
+        <MappingFragment StoreEntitySet="Refund">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RefundByID" ColumnName="RefundByID" />
+          <ScalarProperty Name="RefundAmount" ColumnName="RefundAmount" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="RefundToID" ColumnName="RefundToID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReviewRatings">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.ReviewRating">
+        <MappingFragment StoreEntitySet="ReviewRating">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="IsWorkAgain" ColumnName="IsWorkAgain" />
+          <ScalarProperty Name="ThumbsValue" ColumnName="ThumbsValue" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Review" ColumnName="Review" />
+          <ScalarProperty Name="ToID" ColumnName="ToID" />
+          <ScalarProperty Name="FromID" ColumnName="FromID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rights">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Right">
+        <MappingFragment StoreEntitySet="Rights">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UniqueCode" ColumnName="UniqueCode" />
+          <ScalarProperty Name="RightsName" ColumnName="RightsName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleNotifications">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.RoleNotification">
+        <MappingFragment StoreEntitySet="RoleNotification">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesEntries">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.SalesEntry">
+        <MappingFragment StoreEntitySet="SalesEntry">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Quigs" ColumnName="Quigs" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SavedOrders">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.SavedOrder">
+        <MappingFragment StoreEntitySet="SavedOrder">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="JobExpireDate" ColumnName="JobExpireDate" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeeLowestBids">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.SeeLowestBid">
+        <MappingFragment StoreEntitySet="SeeLowestBid">
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceQuestions">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.ServiceQuestion">
+        <MappingFragment StoreEntitySet="ServiceQuestions">
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="Longtail" ColumnName="Longtail" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+          <ScalarProperty Name="ServiceIcon" ColumnName="ServiceIcon" />
+          <ScalarProperty Name="ServicePic" ColumnName="ServicePic" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StateMasters">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.StateMaster">
+        <MappingFragment StoreEntitySet="StateMaster">
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubscriptionPlans">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.SubscriptionPlan">
+        <MappingFragment StoreEntitySet="SubscriptionPlans">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsCardRequired" ColumnName="IsCardRequired" />
+          <ScalarProperty Name="PlanPic" ColumnName="PlanPic" />
+          <ScalarProperty Name="PlanDescription" ColumnName="PlanDescription" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeZones">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.TimeZone">
+        <MappingFragment StoreEntitySet="TimeZone">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="HoursChange" ColumnName="HoursChange" />
+          <ScalarProperty Name="TimeZoneName" ColumnName="TimeZoneName" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAddresses">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserAddress">
+        <MappingFragment StoreEntitySet="UserAddress">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+          <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+          <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBankAccounts">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserBankAccount">
+        <MappingFragment StoreEntitySet="UserBankAccount">
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="VerifiedByID" ColumnName="VerifiedByID" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="HolderName" ColumnName="HolderName" />
+          <ScalarProperty Name="RoutingNumber" ColumnName="RoutingNumber" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBidHistories">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserBidHistory">
+        <MappingFragment StoreEntitySet="UserBidHistory">
+          <ScalarProperty Name="CratedDate" ColumnName="CratedDate" />
+          <ScalarProperty Name="BidDr" ColumnName="BidDr" />
+          <ScalarProperty Name="BidCr" ColumnName="BidCr" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBusinessDetails">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserBusinessDetail">
+        <MappingFragment StoreEntitySet="UserBusinessDetail">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+          <ScalarProperty Name="YearEstablished" ColumnName="YearEstablished" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCertifications">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserCertification">
+        <MappingFragment StoreEntitySet="UserCertification">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+          <ScalarProperty Name="CertificationNo" ColumnName="CertificationNo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+          <ScalarProperty Name="ToMonth" ColumnName="ToMonth" />
+          <ScalarProperty Name="FromYear" ColumnName="FromYear" />
+          <ScalarProperty Name="FromMonth" ColumnName="FromMonth" />
+          <ScalarProperty Name="GrantedBy" ColumnName="GrantedBy" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDebitCards">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserDebitCard">
+        <MappingFragment StoreEntitySet="UserDebitCards">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="VerifiedByID" ColumnName="VerifiedByID" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="ExpiryYY" ColumnName="ExpiryYY" />
+          <ScalarProperty Name="ExpiryMM" ColumnName="ExpiryMM" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetail">
+          <ScalarProperty Name="UserSignUpComplete" ColumnName="UserSignUpComplete" />
+          <ScalarProperty Name="CarryForwordCoin" ColumnName="CarryForwordCoin" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsPublish" ColumnName="IsPublish" />
+          <ScalarProperty Name="WebSiteUrl" ColumnName="WebSiteUrl" />
+          <ScalarProperty Name="ProfessionalDescription" ColumnName="ProfessionalDescription" />
+          <ScalarProperty Name="ProfessionalTitle" ColumnName="ProfessionalTitle" />
+          <ScalarProperty Name="BidPoints" ColumnName="BidPoints" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="HourlyRate" ColumnName="HourlyRate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+          <ScalarProperty Name="TimeZoneID" ColumnName="TimeZoneID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDocs">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserDoc">
+        <MappingFragment StoreEntitySet="UserDocs">
+          <ScalarProperty Name="VerifiedDate" ColumnName="VerifiedDate" />
+          <ScalarProperty Name="VerifiedByID" ColumnName="VerifiedByID" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+          <ScalarProperty Name="DocumentExt" ColumnName="DocumentExt" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserEducations">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserEducation">
+        <MappingFragment StoreEntitySet="UserEducation">
+          <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+          <ScalarProperty Name="ToMonth" ColumnName="ToMonth" />
+          <ScalarProperty Name="FromYear" ColumnName="FromYear" />
+          <ScalarProperty Name="FromMonth" ColumnName="FromMonth" />
+          <ScalarProperty Name="School" ColumnName="School" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserExperiences">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserExperience">
+        <MappingFragment StoreEntitySet="UserExperience">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CurrentlyWorking" ColumnName="CurrentlyWorking" />
+          <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+          <ScalarProperty Name="ToMonth" ColumnName="ToMonth" />
+          <ScalarProperty Name="FromYear" ColumnName="FromYear" />
+          <ScalarProperty Name="FromMonth" ColumnName="FromMonth" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserICOWallets">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserICOWallet">
+        <MappingFragment StoreEntitySet="UserICOWallet">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="NoOfToken" ColumnName="NoOfToken" />
+          <ScalarProperty Name="TokenPrice" ColumnName="TokenPrice" />
+          <ScalarProperty Name="CampainID" ColumnName="CampainID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLicences">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserLicence">
+        <MappingFragment StoreEntitySet="UserLicence">
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="Issuer" ColumnName="Issuer" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="LicenceNo" ColumnName="LicenceNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserNotifications">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserNotification">
+        <MappingFragment StoreEntitySet="UserNotification">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="NotificationValue" ColumnName="NotificationValue" />
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPayments">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserPayment">
+        <MappingFragment StoreEntitySet="UserPayment">
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="PaymentFrom" ColumnName="PaymentFrom" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserPlanId" ColumnName="UserPlanId" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPlans">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserPlan">
+        <MappingFragment StoreEntitySet="UserPlan">
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PlanAmount" ColumnName="PlanAmount" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PlanDurationID" ColumnName="PlanDurationID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPlanHistories">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserPlanHistory">
+        <MappingFragment StoreEntitySet="UserPlanHistory">
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PlanAmount" ColumnName="PlanAmount" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PlanDurationID" ColumnName="PlanDurationID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPortfolios">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserPortfolio">
+        <MappingFragment StoreEntitySet="UserPortfolio">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="YouTubeVideoUrl" ColumnName="YouTubeVideoUrl" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRights">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserRight">
+        <MappingFragment StoreEntitySet="UserRights">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RightsID" ColumnName="RightsID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRolePlans">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserRolePlan">
+        <MappingFragment StoreEntitySet="UserRolePlans">
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserServiceAreas">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserServiceArea">
+        <MappingFragment StoreEntitySet="UserServiceArea">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="TravellingID" ColumnName="TravellingID" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserServices">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserService">
+        <MappingFragment StoreEntitySet="UserServices">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsMain" ColumnName="IsMain" />
+          <ScalarProperty Name="UserAreaID" ColumnName="UserAreaID" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserWallets">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.UserWallet">
+        <MappingFragment StoreEntitySet="UserWallet">
+          <ScalarProperty Name="BonusCoin" ColumnName="BonusCoin" />
+          <ScalarProperty Name="PayAmount" ColumnName="PayAmount" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="PaymentFrom" ColumnName="PaymentFrom" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DebitAmount" ColumnName="DebitAmount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserPaymentId" ColumnName="UserPaymentId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WhitePapers">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.WhitePaper">
+        <MappingFragment StoreEntitySet="WhitePaper">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityServicesTemps">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.CityServicesTemp">
+        <MappingFragment StoreEntitySet="CityServicesTemp">
+          <ScalarProperty Name="UploadUniqueKey" ColumnName="UploadUniqueKey" />
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+          <ScalarProperty Name="PageH2Content" ColumnName="PageH2Content" />
+          <ScalarProperty Name="PageH1Content" ColumnName="PageH1Content" />
+          <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="ServiceCityContent" ColumnName="ServiceCityContent" />
+          <ScalarProperty Name="CityDescription" ColumnName="CityDescription" />
+          <ScalarProperty Name="ZipCodeStr" ColumnName="ZipCodeStr" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ParentServiceName" ColumnName="ParentServiceName" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StateServiceMaps">
+      <EntityTypeMapping TypeName="QuiGigAPIModel.StateServiceMap">
+        <MappingFragment StoreEntitySet="StateServiceMap">
+          <ScalarProperty Name="stateName" ColumnName="stateName" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="QuiGigAPIModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
