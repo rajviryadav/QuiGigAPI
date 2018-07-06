@@ -105,7 +105,7 @@ namespace QuiGigAPI.Controllers
 
         [Route("api/MarkNotificationRead")]
         [HttpPost]
-        public IHttpActionResult MarkNotificationRead(UserViewModel model)
+        public IHttpActionResult MarkNotificationRead(DeleteDetailViewModel model)
         {
             bool status = false;
             var message = "";
@@ -118,7 +118,7 @@ namespace QuiGigAPI.Controllers
             {
                 try
                 {
-                    var query = context.Activities.Where(x => x.ToID == model.UserId && x.IsActive == true && x.IsDelete == false && x.IsNotification == true && x.IsRead == false);
+                    var query = context.Activities.Where(x => x.ToID == model.UserId && x.ID == model.ID && x.IsActive == true && x.IsDelete == false && x.IsNotification == true && x.IsRead == false);
                     foreach (var entity in query)
                     {
                         entity.IsRead = true;
@@ -184,10 +184,13 @@ namespace QuiGigAPI.Controllers
 
         [Route("api/GetAllNotificationList")]
         [HttpPost]
-        public IHttpActionResult GetAllNotificationList(UserViewModel user)
+        public IHttpActionResult GetAllNotificationList(NotificationByTypeModel user)
         {
             bool status = false;
             var model = new List<NotificationListModel>();
+            int gigsCount = 0;
+            int bidsCount = 0;
+            int allCount = 0;
             var message = "";
             if (!ModelState.IsValid)
             {
@@ -198,15 +201,51 @@ namespace QuiGigAPI.Controllers
             {
                 try
                 {
-                    var list = context.Activities.Where(x => x.ToID == user.UserId && x.IsActive == true && x.IsDelete == false && x.IsNotification == true).OrderByDescending(x => x.ID).ToList();
-                    model = list.Select(x => new NotificationListModel
+                    if (user.NotificationType == 1)
                     {
-                        UserName = x.AspNetUser.UserDetails2.Select(y => y.FirstName).FirstOrDefault(),
-                        CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
-                        UserImage = x.AspNetUser.UserDetails2.Select(y => y.ProfilePic).FirstOrDefault(),
-                        NotificationType = x.ActivityType == "PostedJob" ? 1 : x.ActivityType == "Hire" ? 2 : 0,
-                        Message = x.Message,
-                    }).ToList();
+                        var list = context.Activities.Where(x => x.ToID == user.UserId && x.ActivityType == "PostedJob" && x.IsActive == true && x.IsDelete == false && x.IsNotification == true).OrderByDescending(x => x.ID).ToList();
+                        model = list.Select(x => new NotificationListModel
+                        {
+                            ID = x.ID,
+                            UserName = x.AspNetUser.UserDetails2.Select(y => y.FirstName).FirstOrDefault(),
+                            CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
+                            UserImage = x.AspNetUser.UserDetails2.Select(y => y.ProfilePic).FirstOrDefault(),
+                            Message = x.Message,
+                            JobId = x.JobId,
+                            IsRead = x.IsRead
+                        }).ToList();
+                    }
+                    else if (user.NotificationType == 2)
+                    {
+                        var list = context.Activities.Where(x => x.ToID == user.UserId && x.ActivityType == "Hire" && x.IsActive == true && x.IsDelete == false && x.IsNotification == true).OrderByDescending(x => x.ID).ToList();
+                        model = list.Select(x => new NotificationListModel
+                        {
+                            ID = x.ID,
+                            UserName = x.AspNetUser.UserDetails2.Select(y => y.FirstName).FirstOrDefault(),
+                            CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
+                            UserImage = x.AspNetUser.UserDetails2.Select(y => y.ProfilePic).FirstOrDefault(),
+                            Message = x.Message,
+                            JobId = x.JobId,
+                            IsRead = x.IsRead
+                        }).ToList();
+                    }
+                    else
+                    {
+                        var list = context.Activities.Where(x => x.ToID == user.UserId && x.IsActive == true && x.IsDelete == false && x.IsNotification == true).OrderByDescending(x => x.ID).ToList();
+                        model = list.Select(x => new NotificationListModel
+                        {
+                            ID = x.ID,
+                            UserName = x.AspNetUser.UserDetails2.Select(y => y.FirstName).FirstOrDefault(),
+                            CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
+                            UserImage = x.AspNetUser.UserDetails2.Select(y => y.ProfilePic).FirstOrDefault(),
+                            Message = x.Message,
+                            JobId = x.JobId,
+                            IsRead = x.IsRead
+                        }).ToList();
+                    }
+                    gigsCount = context.Activities.Where(x => x.ToID == user.UserId && x.ActivityType == "PostedJob" && x.IsActive == true && x.IsDelete == false && x.IsRead == false).Count();
+                    bidsCount = context.Activities.Where(x => x.ToID == user.UserId && x.ActivityType == "Hire" && x.IsActive == true && x.IsDelete == false && x.IsRead == false).Count();
+                    allCount = context.Activities.Where(x => x.ToID == user.UserId && x.IsActive == true && x.IsDelete == false &&  x.IsRead == false).Count();
                     status = true;
                     message = "Get List.";
                 }
@@ -220,9 +259,12 @@ namespace QuiGigAPI.Controllers
             {
                 Success = status,
                 Message = message,
-                Result = model
+                Result = model,
+                GigsCount = gigsCount,
+                BidsCount = bidsCount,
+                AllCount = allCount
             });
-        }
+        }     
 
         [Route("api/GetNewNotification")]
         [HttpGet]

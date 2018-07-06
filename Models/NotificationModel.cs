@@ -27,11 +27,13 @@ namespace QuiGigAPI.Models
     }
     public class NotificationListModel
     {
+        public long ID { get; set; }
+        public long? JobId { get; set; }
         public string UserName { get; set; }
         public string Message { get; set; }
         public string UserImage { get; set; }
-        public int NotificationType { get; set; }
         public string CreatedDate { get; set; }
+        public bool IsRead { get; set; }
     }
     public class NewNotificationModel
     {
@@ -54,5 +56,13 @@ namespace QuiGigAPI.Models
         public string Reason { get; set; }
         [Required(ErrorMessage = "Please enter UserId")]
         public string UserId { get; set; }
+    }
+
+    public class NotificationByTypeModel
+    {
+        [Required(ErrorMessage = "Please enter UserId")]
+        public string UserId { get; set; }
+        [Required(ErrorMessage = "Please enter Notification Type")]
+        public int NotificationType { get; set; }
     }
 }

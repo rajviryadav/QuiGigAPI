@@ -92,7 +92,7 @@ namespace QuiGigAPI.Common
             context.Activities.Add(activity);
             context.SaveChanges();
         }
-        public static void SaveActivity(QuiGigAPIEntities context, string message, string fromUserId, string toUserId, string activityType, long jobId, string userType, bool isNotification, bool isRead)
+        public static long SaveActivity(QuiGigAPIEntities context, string message, string fromUserId, string toUserId, string activityType, long jobId, string userType, bool isNotification, bool isRead)
         {
             Activity activity = new Activity();
             activity.Message = message;
@@ -104,6 +104,7 @@ namespace QuiGigAPI.Common
                 activity.RedirectPath = "#";
             else
                 activity.RedirectPath = "/order-detail?key=" + Encrypt(userType) + "&param1=" + jobId;
+            activity.JobId = jobId;
             activity.IsRead = false;
             activity.IsActive = true;
             activity.IsDelete = false;
@@ -111,7 +112,8 @@ namespace QuiGigAPI.Common
             activity.UpdatedDate = DateTime.UtcNow;
             context.Activities.Add(activity);
             context.SaveChanges();
-        }      
+            return activity.ID;
+        }
         public static bool GetNotificationValue(string notificationType, string notificationCat, string userId, QuiGigAPIEntities context)
         {
             bool notificationVal = false;

@@ -272,3 +272,4 @@ E:\Server Project\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.pdb
 E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Facebook.dll
 E:\Server Project\QuiGigAPI\QuiGigAPI\bin\Facebook.xml
 E:\Server Project\QuiGigAPI\QuiGigAPI\bin\RestSharp.dll
+E:\Server Project\QuiGigAPI\QuiGigAPI\obj\Debug\QuiGigAPI.csprojResolveAssemblyReference.cache

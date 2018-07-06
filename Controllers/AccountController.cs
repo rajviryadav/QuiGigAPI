@@ -104,24 +104,39 @@ namespace QuiGigAPI.Controllers
                             case SignInStatus.Success:
                                 {
                                     var detail = context.UserDetails.Where(a => a.UserID == user.Id).FirstOrDefault();
-                                    if (UserManager.IsInRole(user.Id, UserRoleEnum.SuperAdmin.ToString()))
-                                        currRole = UserRoleEnum.SuperAdmin.ToString();
-                                    else if (UserManager.IsInRole(user.Id, UserRoleEnum.SubAdmin.ToString()))
-                                        currRole = UserRoleEnum.SubAdmin.ToString();
-                                    else if (UserManager.IsInRole(user.Id, UserRoleEnum.ServiceProvider.ToString()))
-                                        currRole = UserRoleEnum.ServiceProvider.ToString();
-                                    else
-                                        currRole = UserRoleEnum.Customer.ToString();
-
-                                    return Ok(new
+                                    if (detail.IsDelete)
                                     {
-                                        Success = true,
-                                        Message = "Login successfully. Please wait....",
-                                        UserName = detail.FirstName,
-                                        UserId = user.Id,
-                                        CurrentRole = currRole,
-                                        IsEmailConfirmed = user.EmailConfirmed
-                                    });
+                                        return Ok(new
+                                        {
+                                            Success = false,
+                                            Message = "Currently your account is de-activated please contact to admin",
+                                            UserName = userName,
+                                            UserId = userId,
+                                            CurrentRole = currRole,
+                                            IsEmailConfirmed = false
+                                        });
+                                    }
+                                    else
+                                    {
+                                        if (UserManager.IsInRole(user.Id, UserRoleEnum.SuperAdmin.ToString()))
+                                            currRole = UserRoleEnum.SuperAdmin.ToString();
+                                        else if (UserManager.IsInRole(user.Id, UserRoleEnum.SubAdmin.ToString()))
+                                            currRole = UserRoleEnum.SubAdmin.ToString();
+                                        else if (UserManager.IsInRole(user.Id, UserRoleEnum.ServiceProvider.ToString()))
+                                            currRole = UserRoleEnum.ServiceProvider.ToString();
+                                        else
+                                            currRole = UserRoleEnum.Customer.ToString();
+
+                                        return Ok(new
+                                        {
+                                            Success = true,
+                                            Message = "Login successfully. Please wait....",
+                                            UserName = detail.FirstName,
+                                            UserId = user.Id,
+                                            CurrentRole = currRole,
+                                            IsEmailConfirmed = user.EmailConfirmed
+                                        });
+                                    }
                                 }
 
                             case SignInStatus.LockedOut:
@@ -814,7 +829,7 @@ namespace QuiGigAPI.Controllers
                     Message = "Login successfully. Please wait....",
                     CurrentRole = currRole,
                     UserName = userExist.FirstName,
-                    UserId = user.Id
+                    UserId = userExist.UserID
                 });
             }
             return Ok(new
@@ -911,7 +926,7 @@ namespace QuiGigAPI.Controllers
                     userEntity.IsActive = true;
                     userEntity.IsPublish = true;
                     userEntity.IsDelete = false;
-                    
+
                     context.UserDetails.Add(userEntity);
                     context.SaveChanges();
 
@@ -956,7 +971,7 @@ namespace QuiGigAPI.Controllers
                         Message = "Login successfully. Please wait....",
                         CurrentRole = currRole,
                         UserName = userExist.FirstName,
-                        UserId = user.Id
+                        UserId = userExist.UserID
                     });
                 }
             }
