@@ -242,13 +242,13 @@ namespace QuiGigAPI.Controllers
                         if (result.Succeeded)
                         {
                             var userRole = UserRoleEnum.Customer.ToString();
-                            if (!string.IsNullOrEmpty(model.UserRole))
-                            {
-                                if (model.UserRole == UserRoleEnum.ServiceProvider.ToString())
-                                {
-                                    userRole = UserRoleEnum.ServiceProvider.ToString();
-                                }
-                            }
+                            //if (!string.IsNullOrEmpty(model.UserRole))
+                            //{
+                            //    if (model.UserRole == UserRoleEnum.ServiceProvider.ToString())
+                            //    {
+                            //        userRole = UserRoleEnum.ServiceProvider.ToString();
+                            //    }
+                            //}
                             var userEmailCode = RandomStringAndNumeric(6);
 
                             UserManager.AddToRole(user.Id, userRole);

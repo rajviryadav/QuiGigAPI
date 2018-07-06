@@ -25,7 +25,6 @@ namespace QuiGigAPI.Models
         public long ServiceId { get; set; }
         public string City { get; set; }
         public string StateName { get; set; }
-        public string UserRole { get; set; }
     }
     public class ConfirmEmailModel
     {

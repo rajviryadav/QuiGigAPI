@@ -1314,7 +1314,7 @@ namespace QuiGigAPI.Controllers
                 {
                     model = context.UserServices.Where(x => x.UserID == user.UserId && x.IsActive == true).Select(y => new UserChildServiceList
                     {
-                        ID = y.ServiceID,
+                        ID = y.ID,
                         Name = y.Service.ServiceName
                     }).ToList();
                     message = "Get List.";
@@ -1342,7 +1342,7 @@ namespace QuiGigAPI.Controllers
             var messsage = "";
             try
             {
-                var service = context.UserServices.Where(x => x.ServiceID == model.ID && x.UserID == model.UserId).FirstOrDefault();
+                var service = context.UserServices.Where(x => x.ID == model.ID && x.UserID == model.UserId).FirstOrDefault();
                 if (service != null)
                 {
                     service.IsActive = false;
@@ -1521,15 +1521,37 @@ namespace QuiGigAPI.Controllers
                     service.CreatedDate = DateTime.UtcNow;
                     context.UserServices.Add(service);
                     context.SaveChanges();
+                    success = true;
+                    messsage = "Save Successfully";
                 }
                 else
                 {
                     var service = context.UserServices.Where(x => x.ServiceID == model.ServiceId && x.UserID == model.UserId).FirstOrDefault();
-                    context.UserServices.Remove(service);
-                    context.SaveChanges();
+                    if (service != null)
+                    {
+                        context.UserServices.Remove(service);
+                        context.SaveChanges();
+                        success = true;
+                        messsage = "Save Successfully";
+                    }
+                    else
+                    {
+                        success = false;
+                        messsage = "Data not exist";
+                    }
                 }
-                success = true;
-                messsage = "Save Successfully";
+                var serviceDetail = context.UserServices.Where(x => x.UserID == model.UserId && x.IsActive == true).Count();
+                if(serviceDetail > 0)
+                {
+                    UserManager.RemoveFromRole(model.UserId, UserRoleEnum.Customer.ToString());
+                    UserManager.AddToRole(model.UserId, UserRoleEnum.ServiceProvider.ToString());
+                }
+                else
+                {
+                    UserManager.RemoveFromRole(model.UserId, UserRoleEnum.ServiceProvider.ToString());
+                    UserManager.AddToRole(model.UserId, UserRoleEnum.Customer.ToString());
+                }
+               
             }
             catch (Exception ex)
             {
