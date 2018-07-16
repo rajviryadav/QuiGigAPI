@@ -38,6 +38,7 @@ namespace QuiGigAPI.DataBase
         public string UpdatedByID { get; set; }
         public int OrderNo { get; set; }
         public string Longtail { get; set; }
+        public string ServiceType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Job> Jobs { get; set; }

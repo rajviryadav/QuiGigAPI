@@ -494,7 +494,7 @@ namespace QuiGigAPI.Controllers
             {
                 try
                 {
-                    var experience = context.UserExperiences.Where(x => x.ID == model.ID).FirstOrDefault();
+                    var experience = context.UserExperiences.Where(x => x.ID == model.ID && x.UserID == model.UserID).FirstOrDefault();
                     experience = experience == null ? new UserExperience() : experience;
 
                     experience.Title = model.Title;
@@ -680,7 +680,7 @@ namespace QuiGigAPI.Controllers
             {
                 try
                 {
-                    var certification = context.UserCertifications.Where(x => x.ID == model.ID).FirstOrDefault();
+                    var certification = context.UserCertifications.Where(x => x.ID == model.ID && x.UserID == model.UserID).FirstOrDefault();
                     certification = certification == null ? new UserCertification() : certification;
 
                     certification.Title = model.Title;
@@ -850,7 +850,7 @@ namespace QuiGigAPI.Controllers
             {
                 try
                 {
-                    var education = context.UserEducations.Where(x => x.ID == model.ID).FirstOrDefault();
+                    var education = context.UserEducations.Where(x => x.ID == model.ID && x.UserID == model.UserID).FirstOrDefault();
                     education = education == null ? new UserEducation() : education;
 
                     education.Degree = model.Degree;
@@ -1136,7 +1136,7 @@ namespace QuiGigAPI.Controllers
             {
                 try
                 {
-                    var licence = context.UserLicences.Where(x => x.ID == model.ID).FirstOrDefault();
+                    var licence = context.UserLicences.Where(x => x.ID == model.ID && x.UserID == model.UserID).FirstOrDefault();
                     licence = licence == null ? new UserLicence() : licence;
 
                     licence.LicenceNo = model.LicenceNo;
@@ -1315,6 +1315,7 @@ namespace QuiGigAPI.Controllers
                     model = context.UserServices.Where(x => x.UserID == user.UserId && x.IsActive == true).Select(y => new UserChildServiceList
                     {
                         ID = y.ID,
+                        ServiceId = y.ServiceID,
                         Name = y.Service.ServiceName
                     }).ToList();
                     message = "Get List.";
@@ -1545,11 +1546,13 @@ namespace QuiGigAPI.Controllers
                 {
                     UserManager.RemoveFromRole(model.UserId, UserRoleEnum.Customer.ToString());
                     UserManager.AddToRole(model.UserId, UserRoleEnum.ServiceProvider.ToString());
+                    var nCount = context.Proc_SetUserDefaultNotifications(model.UserId, UserRoleEnum.ServiceProvider.ToString());
                 }
                 else
                 {
                     UserManager.RemoveFromRole(model.UserId, UserRoleEnum.ServiceProvider.ToString());
                     UserManager.AddToRole(model.UserId, UserRoleEnum.Customer.ToString());
+                    var nCount = context.Proc_SetUserDefaultNotifications(model.UserId, UserRoleEnum.Customer.ToString());
                 }
                
             }

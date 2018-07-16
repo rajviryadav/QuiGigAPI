@@ -20,6 +20,7 @@ namespace QuiGigAPI.Models
     {
         public string Name { get; set; }
         public long? ID { get; set; }
+        public long? ServiceId { get; set; }
     }
     public class DeleteUserService
     {

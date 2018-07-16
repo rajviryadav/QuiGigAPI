@@ -1422,6 +1422,7 @@
     <EntitySetMapping Name="Services">
       <EntityTypeMapping TypeName="QuiGigAPIModel.Service">
         <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
           <ScalarProperty Name="Longtail" ColumnName="Longtail" />
           <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
           <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />

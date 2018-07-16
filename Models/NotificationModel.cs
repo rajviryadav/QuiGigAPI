@@ -29,9 +29,12 @@ namespace QuiGigAPI.Models
     {
         public long ID { get; set; }
         public long? JobId { get; set; }
+        public long? ProposalId { get; set; }
         public string UserName { get; set; }
         public string Message { get; set; }
         public string UserImage { get; set; }
+        public string NotificationType { get; set; }
+        public string ReturnUrl { get; set; }
         public string CreatedDate { get; set; }
         public bool IsRead { get; set; }
     }

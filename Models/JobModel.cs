@@ -53,23 +53,72 @@ namespace QuiGigAPI.Models
         public long JobID { get; set; }
         public DateTime? DeliveryDate { get; set; }
         public DateTime? StartDate { get; set; }
+        public DateTime ProposalCreatedDate { get; set; }
         public string Description { get; set; }
+        public string ServicePic { get; set; }
         public decimal Amount { get; set; }
         public int? Duration { get; set; }
         public string UserID { get; set; }
         public string HiredStatus { get; set; }
         public string SPStatus { get; set; }
         public string CustomerStatus { get; set; }
+        public bool IsShowLowestBid { get; set; }
+        public decimal LowestBidAmount { get; set; }
         public bool IsUnlimitedBidView { get; set; }
         public string UserName { get; set; }
         public string ProfilePic { get; set; }
         public bool? IsBidLock { get; set; }
         public string CreatedDate { get; set; }
-        public string location { get; set; }
+        public string Location { get; set; }
         public int MyBidsCount { get; set; }
         public int MyGigsCount { get; set; }
         public int TotalLikeCount { get; set; }
         public string CreatedProposalDate { get; set; }
+    }
+
+    public class SavedProposalModel
+    {
+        public long ID { get; set; }       
+        public string DeliveryDate { get; set; }
+        public string StartDate { get; set; }
+        public string ProposalCreatedDate { get; set; }
+        public string Description { get; set; }
+        public string ServicePic { get; set; }
+        public decimal Amount { get; set; }
+        public int? Duration { get; set; }       
+        public string HiredStatus { get; set; }
+        public string ProposalStatus { get; set; }
+        public string SPStatus { get; set; }
+        public string CustomerStatus { get; set; }      
+        public bool? IsBidLock { get; set; }
+        public UserDetailViewModel UserDetail { get; set; }
+    }
+    public class UserDetailViewModel
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string PhoneNo { get; set; }
+        public string Image { get; set; }
+        public string CreatedDate { get; set; }
+    }
+    public class ProposalByIdModel
+    {
+        public long ID { get; set; }      
+        public string DeliveryDate { get; set; }
+        public string StartDate { get; set; }
+        public string ProposalCreatedDate { get; set; }
+        public string Description { get; set; }
+        public string ServicePic { get; set; }
+        public decimal Amount { get; set; }
+        public int? Duration { get; set; }       
+        public string HiredStatus { get; set; }
+        public string ProposalStatus { get; set; }
+        public string SPStatus { get; set; }
+        public string CustomerStatus { get; set; }
+        public bool IsShowLowestBid { get; set; }
+        public decimal LowestBidAmount { get; set; }
+        public bool? IsBidLock { get; set; }
+        public UserDetailViewModel UserDetail { get; set; }
     }
     public class EditProposalModel
     {
@@ -101,6 +150,44 @@ namespace QuiGigAPI.Models
         [Required(ErrorMessage = "Please enter UserId")]
         public string UserId { get; set; }
     }
+    public class UnLockBid
+    {
+        [Required(ErrorMessage = "Please enter ProposalId")]
+        public long ProposalId { get; set; }
+        [Required(ErrorMessage = "Please enter JobId")]
+        public long JobId { get; set; }
+        [Required(ErrorMessage = "Please enter UserId")]
+        public string UserId { get; set; }
+    }
+    public class HiredDetailModel
+    {
+        public long HiredNumber { get; set; }
+        public long HiredJobId { get; set; }
+        public string HiredUserImage { get; set; }
+        public string HiredUser { get; set; }
+        public string HiredStartDate { get; set; }
+        public string HiredCreatedDate { get; set; }
+        public int? HiredDuration { get; set; }
+        public string HiredUserEmail { get; set; }
+        public string HiredServiceName { get; set; }
+        public string HiredDescription { get; set; }
+        public decimal HiredAmount { get; set; }
+        public int ThumbsUp { get; set; }
+        public int ThumbsDown { get; set; }
+        public int HiredJobCount { get; set; }
+        public string HiredPhoneNo { get; set; }
+        public List<MatchingOrderOptionViewModel> HiredQuestionOption { get; set; }
+        public string HiredUserLocation { get; set; }
+    }
+    public class MatchingOrderOptionViewModel
+    {
+        public long OptionID { get; set; }
+        public string OtherAnswer { get; set; }
+        public string OptionHeading { get; set; }
+        public string Placeholder { get; set; }
+        public string QuestionTitle { get; set; }
+        public List<OrderOptionAttachViewModel> OrderOptionAttachList { get; set; }
+    }    
     public class EditProposalVM
     {
         [Required(ErrorMessage = "Please enter ProposalId")]

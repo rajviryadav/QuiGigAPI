@@ -47,7 +47,7 @@ namespace QuiGigAPI.Controllers
             {
                 try
                 {
-                    var query = context.Jobs.Where(x => x.ID == viewModel.JobId && x.IsActive == true && x.IsDelete == false).FirstOrDefault();                   
+                    var query = context.Jobs.Where(x => x.ID == viewModel.JobId && x.IsActive == true && x.IsDelete == false).FirstOrDefault();
                     model.ID = query.ID;
                     model.JobTitle = query.JobTitle;
                     model.CreatedDate = Convert.ToDateTime(query.UpdatedDate).ToString("MM/dd/yyyy HH:mm:ss");
@@ -90,12 +90,12 @@ namespace QuiGigAPI.Controllers
         }
 
         [HttpPost]
-        [Route("api/GetSavedProposalByJobId")]
-        public IHttpActionResult GetSavedProposalByJobId(JobModel viewModel)
+        [Route("api/GetSavedProposalById")]
+        public IHttpActionResult GetSavedProposalById(HireViewModel viewModel)
         {
             bool success = false;
             var message = "";
-            var model = new ProposalModel();
+            var model = new SavedProposalModel();
             if (!ModelState.IsValid)
             {
                 var errors = ModelState.Where(x => x.Value.Errors.Count > 0).Select(x => new { x.Value.Errors }).FirstOrDefault();
@@ -105,19 +105,39 @@ namespace QuiGigAPI.Controllers
             {
                 try
                 {
-                    var query = context.Proposals.Where(x => x.JobID == viewModel.JobId && x.UserID == viewModel.UserId && (x.ProposalStatus == ProposalStatus.Pending.ToString() || x.ProposalStatus == ProposalStatus.Accepted.ToString()) && x.IsActive == true && x.IsDelete == false);
-                    model = query.Select(x => new ProposalModel
+                    var query = context.Proposals.Where(x => x.ID == viewModel.ProposalId && x.Job.UserID == viewModel.UserId && x.IsActive == true && x.IsDelete == false).FirstOrDefault();
+                    if (query != null)
                     {
-                        ID = x.ID,
-                        Description = x.Description,
-                        DeliveryDate = x.DeliveryDate,
-                        Amount = x.Amount,
-                        HiredStatus = x.Hireds.Where(y => y.ProposalID == x.ID).Select(y => y.HiredStatus).FirstOrDefault(),
-                        SPStatus = x.SPStatus,
-                        CustomerStatus = x.CustomerStatus
-                    }).FirstOrDefault();
-                    success = true;
-                    message = "Get List";
+                        model.ID = query.ID;
+                        model.Description = query.Description;
+                        model.DeliveryDate = Convert.ToDateTime(query.DeliveryDate).ToString("MM/dd/yyyy HH:mm:ss");
+                        model.StartDate = Convert.ToDateTime(query.StartDate).ToString("MM/dd/yyyy HH:mm:ss");
+                        model.ProposalCreatedDate = query.CreatedDate.ToString("MM/dd/yyyy HH:mm:ss");
+                        model.Duration = query.Duration;
+                        model.ServicePic = query.Job.Service.Service1.ServicePic;
+                        model.Amount = query.Amount;
+                        model.ProposalStatus = query.ProposalStatus;
+                        model.HiredStatus = query.Hireds.Where(y => y.ProposalID == query.ID).Select(y => y.HiredStatus).FirstOrDefault();
+                        model.SPStatus = query.SPStatus;
+                        model.CustomerStatus = query.CustomerStatus;
+                        model.IsBidLock = query.IsBidLock;
+                        var userDetail = context.UserDetails.Where(x => x.UserID == query.UserID).FirstOrDefault();
+                        if (userDetail != null)
+                        {
+                            model.UserDetail = new UserDetailViewModel();
+                            model.UserDetail.Name = userDetail.FirstName;
+                            model.UserDetail.Image = userDetail.ProfilePic;
+                            model.UserDetail.PhoneNo = userDetail.AspNetUser2.PhoneNumber;
+                            model.UserDetail.Email = userDetail.AspNetUser2.Email;
+                            model.UserDetail.CreatedDate = Util.TimeAgo(Convert.ToDateTime(userDetail.CreatedDate));
+                        }
+                        success = true;
+                        message = "Get List";
+                    }
+                    else
+                    {
+                        message = "No record found";
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -177,6 +197,172 @@ namespace QuiGigAPI.Controllers
                 Success = success,
                 Message = message,
                 Result = model
+            });
+        }
+
+        [HttpPost]
+        [Route("api/GetProposalById")]
+        public IHttpActionResult GetProposalById(HireViewModel viewModel)
+        {
+            bool success = false;
+            var messsage = "";
+            var model = new ProposalByIdModel();
+            try
+            {
+                var query = context.Proposals.Where(x => x.ID == viewModel.ProposalId && x.UserID == viewModel.UserId && x.IsActive == true && x.IsDelete == false).FirstOrDefault();
+                model.ID = query.ID;
+                model.Description = query.Description;
+                model.DeliveryDate = Convert.ToDateTime(query.DeliveryDate).ToString("MM/dd/yyyy HH:mm:ss");
+                model.StartDate = Convert.ToDateTime(query.StartDate).ToString("MM/dd/yyyy HH:mm:ss");
+                model.ProposalCreatedDate = query.CreatedDate.ToString("MM/dd/yyyy HH:mm:ss");
+                model.ServicePic = query.Job.Service.Service1.ServicePic;
+                model.Duration = query.Duration;
+                model.Amount = query.Amount;
+                model.HiredStatus = query.Hireds.Where(y => y.ProposalID == query.ID).Select(y => y.HiredStatus).FirstOrDefault();
+                model.ProposalStatus = query.ProposalStatus;
+                model.SPStatus = query.SPStatus;
+                model.CustomerStatus = query.CustomerStatus;
+                model.IsShowLowestBid = context.SeeLowestBids.Where(z => z.IsShow == true).Select(z => z.IsShow).FirstOrDefault();
+                model.LowestBidAmount = context.SeeLowestBids.Where(z => z.IsShow == true).Select(z => z.Amount).FirstOrDefault();
+                model.IsBidLock = query.IsBidLock;
+                var userDetail = context.UserDetails.Where(x => x.UserID == query.Job.UserID).FirstOrDefault();
+                if (userDetail != null)
+                {
+                    model.UserDetail = new UserDetailViewModel();
+                    model.UserDetail.Name = userDetail.FirstName;
+                    model.UserDetail.Image = userDetail.ProfilePic;
+                    model.UserDetail.PhoneNo = userDetail.AspNetUser2.PhoneNumber;
+                    model.UserDetail.Email = userDetail.AspNetUser2.Email;
+                    model.UserDetail.CreatedDate = Util.TimeAgo(Convert.ToDateTime(userDetail.CreatedDate));
+                }
+                success = true;
+                messsage = "Get List";
+            }
+            catch (Exception ex)
+            {
+                messsage = ex.Message;
+            }
+            return Ok(new
+            {
+                Success = success,
+                Message = messsage,
+                Result = model
+            });
+        }
+
+        [HttpPost]
+        [Route("api/JobAPI/UnLockBid")]
+        public IHttpActionResult UnLockBid(UnLockBid model)
+        {
+            bool success = false;
+            var messsage = "";
+            try
+            {
+                var userDetail = context.UserDetails.Where(x => x.UserID == model.UserId).FirstOrDefault();
+                var featurePostOrder = context.Features.Where(x => x.UniqueCode == "UNLOCK_HIDDEN_BID").FirstOrDefault();
+                var featureVal = featurePostOrder.PlanDurationFeatures.FirstOrDefault();
+                if (userDetail.BidPoints > Convert.ToInt32(featureVal.FeatureValue))
+                {
+                    var proposal = context.Proposals.Where(x => x.ID == model.ProposalId && x.IsActive == true && x.IsDelete == false).FirstOrDefault();
+                    if (proposal != null)
+                    {
+                        var user = UserManager.FindById(model.UserId);
+                        var roleId = user.Roles.Select(c => c.RoleId).FirstOrDefault();
+                        var currRole = Util.GetRoleNameById(roleId, context);
+                        if (currRole == UserRoleEnum.Customer.ToString())
+                        {
+                            int availableBidCoin = userDetail.BidPoints - Convert.ToInt32(featureVal.FeatureValue);
+                            userDetail.BidPoints = availableBidCoin;
+                            userDetail.UpdatedDate = DateTime.UtcNow;
+
+                            proposal.IsBidLock = true;
+                            context.SaveChanges();
+
+                            messsage = "GetList";
+
+                            bool isUserPushNotify = Util.GetNotificationValue(NotificationEnum.RECEIVED_BID.ToString(), Convert.ToString(NotificationCategoryEnum.PUSH_NOTIFICATION), proposal.UserID, context);
+                            Util.SaveActivity(context, "Congratulations! Your bid has been unlocked by customer", proposal.UserID, proposal.UserID, ActivityType.Hire.ToString(), model.JobId, "ServiceProvider", isUserPushNotify, false);
+                        }
+                        if (currRole == UserRoleEnum.ServiceProvider.ToString())
+                        {
+                            int availableBidCoin = userDetail.BidPoints - Convert.ToInt32(featureVal.FeatureValue);
+                            userDetail.BidPoints = availableBidCoin;
+                            userDetail.UpdatedDate = DateTime.UtcNow;
+
+                            proposal.IsBidLock = true;
+                            context.SaveChanges();
+
+                            messsage = "GetList";
+                            bool isUserPushNotify = Util.GetNotificationValue(NotificationEnum.RECEIVED_BID.ToString(), Convert.ToString(NotificationCategoryEnum.PUSH_NOTIFICATION), proposal.UserID, context);
+                            var jobDetail = context.Jobs.Where(x => x.ID == model.JobId && x.IsActive == true && x.IsDelete == false).FirstOrDefault();
+                            Util.SaveActivity(context, "New service provider has unlocked bid from his end. Please check on project", jobDetail.UserID, jobDetail.UserID, ActivityType.Hire.ToString(), model.JobId, "Customer", isUserPushNotify, false);
+                        }
+                    }
+                }
+                else
+                {
+                    messsage = "PurchaseCoin";
+                }
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                messsage = ex.Message;
+            }
+            return Ok(new
+            {
+                Success = success,
+                Message = messsage
+            });
+        }
+
+        [HttpPost]
+        [Route("api/SeeLowestBid")]
+        public IHttpActionResult SeeLowestBid(JobModel model)
+        {
+            bool success = false;
+            var messsage = "";
+            try
+            {
+                var userDetail = context.UserDetails.Where(x => x.UserID == model.UserId).FirstOrDefault();
+                var featurePostOrder = context.Features.Where(x => x.UniqueCode == "SP_SEE_LOWEST_BID").FirstOrDefault();
+                var featureVal = featurePostOrder.PlanDurationFeatures.FirstOrDefault();
+                if (userDetail.BidPoints > Convert.ToInt32(featureVal.FeatureValue))
+                {
+                    var jobDetail = context.Jobs.Where(x => x.ID == model.JobId && x.IsActive == true && x.IsDelete == false).FirstOrDefault();
+                    if (jobDetail != null)
+                    {
+                        Util.SaveUserWallet(context, model.UserId, 0, "See Lowest Bid", 0, Convert.ToInt32(featureVal.FeatureValue), 0, PaymentStatus.Completed.ToString(), PaymentFromSite.QuiGig.ToString(), 0, 0, "See Lowest Bid");
+                        var proposal = context.Proposals.Where(x => x.JobID == model.JobId).FirstOrDefault();
+                        decimal amount = 0;
+                        if (proposal != null)
+                            amount = context.Database.SqlQuery<decimal>("select min(Amount) from Proposals where jobid =" + model.JobId).FirstOrDefault();
+                        else
+                            amount = 0;
+                        SeeLowestBid seeLowestBid = new SeeLowestBid();
+                        seeLowestBid.IsShow = true;
+                        seeLowestBid.JobId = model.JobId;
+                        seeLowestBid.UserId = model.UserId;
+                        seeLowestBid.Amount = amount;
+                        context.SeeLowestBids.Add(seeLowestBid);
+                        context.SaveChanges();
+                        messsage = "Successfully see lowest bid";
+                    }
+                }
+                else
+                {
+                    messsage = "PurchaseCoin";
+                }
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                messsage = ex.Message;
+            }
+            return Ok(new
+            {
+                Success = success,
+                Message = messsage
             });
         }
 
@@ -282,7 +468,6 @@ namespace QuiGigAPI.Controllers
         {
             bool success = false;
             var message = "";
-            var rUrl = "";
             if (!ModelState.IsValid)
             {
                 var errors = ModelState.Where(x => x.Value.Errors.Count > 0).Select(x => new { x.Value.Errors }).FirstOrDefault();
@@ -308,7 +493,8 @@ namespace QuiGigAPI.Controllers
                         if (model.ProposalStatus == "SPStatus")
                         {
                             userType = "Customer";
-                            Util.SaveActivity(context, "Order " + model.ProposalType + " " + proposal.Job.JobTitle, model.UserId, proposal.Job.UserID, model.ProposalType, proposal.JobID, userType, false, false);
+                            bool isPushNotify = Util.GetNotificationValue(NotificationEnum.JOB_COMPLETE.ToString(), NotificationCategoryEnum.PUSH_NOTIFICATION.ToString(), proposal.Job.UserID, context);
+                            Util.SaveActivityProposal(context, "Order " + model.ProposalType + " " + proposal.Job.JobTitle, model.UserId, proposal.Job.UserID, model.ProposalType, proposal.JobID, userType, isPushNotify, false, proposal.ID);
                             bool isNotify = Util.GetNotificationValue(NotificationEnum.JOB_COMPLETE.ToString(), NotificationCategoryEnum.EMAIL_NOTIFICATION.ToString(), proposal.Job.UserID, context);
                             if (isNotify)
                             {
@@ -346,12 +532,12 @@ namespace QuiGigAPI.Controllers
                                     #endregion
                                 }
                             }
-                            rUrl = "review-rating?parm1=" + proposal.JobID + "&parm2=" + proposal.Job.UserID;
                         }
                         else
                         {
                             userType = "ServiceProvider";
-                            Util.SaveActivity(context, "Order " + model.ProposalType + " " + proposal.Job.JobTitle, model.UserId, proposal.UserID, model.ProposalType, proposal.JobID, userType, false, false);
+                            bool isPushNotify = Util.GetNotificationValue(NotificationEnum.JOB_COMPLETE.ToString(), NotificationCategoryEnum.PUSH_NOTIFICATION.ToString(), proposal.UserID, context);
+                            Util.SaveActivityProposal(context, "Order " + model.ProposalType + " " + proposal.Job.JobTitle, model.UserId, proposal.UserID, model.ProposalType, proposal.JobID, userType, isPushNotify, false, proposal.ID);
                             bool isNotify = Util.GetNotificationValue(NotificationEnum.JOB_COMPLETE.ToString(), NotificationCategoryEnum.EMAIL_NOTIFICATION.ToString(), proposal.UserID, context);
                             if (isNotify)
                             {
@@ -387,7 +573,6 @@ namespace QuiGigAPI.Controllers
                                     #endregion
                                 }
                             }
-                            rUrl = "review-rating?parm1=" + proposal.JobID + "&parm2=" + proposal.UserID;
                         }
 
                     }
@@ -400,8 +585,7 @@ namespace QuiGigAPI.Controllers
             return Ok(new
             {
                 Success = success,
-                Message = message,
-                RUrl = rUrl
+                Message = message
             });
         }
 
@@ -411,6 +595,7 @@ namespace QuiGigAPI.Controllers
         {
             bool success = false;
             var message = "";
+            long proposalId = 0;
             if (!ModelState.IsValid)
             {
                 var errors = ModelState.Where(x => x.Value.Errors.Count > 0).Select(x => new { x.Value.Errors }).FirstOrDefault();
@@ -425,7 +610,6 @@ namespace QuiGigAPI.Controllers
                         if (model.ID == 0)
                         {
                             var userDetail = context.UserDetails.Where(x => x.UserID == model.UserID).FirstOrDefault();
-                            var userCurrentPlan = context.UserPlans.Where(x => x.UserID == model.UserID).FirstOrDefault();
                             var featurePostOrder = context.Features.Where(x => x.UniqueCode == "BID").FirstOrDefault();
                             var featureVal = featurePostOrder.PlanDurationFeatures.FirstOrDefault();
                             if (userDetail.BidPoints >= Convert.ToInt32(featureVal.FeatureValue))
@@ -474,6 +658,7 @@ namespace QuiGigAPI.Controllers
                         //if (savedOrder != null)
                         //    context.SavedOrders.Remove(savedOrder);
                         context.SaveChanges();
+                        proposalId = proposal.ID;
                         success = true;
                         message = "Save successfully.";
                         if (model.ID == 0)
@@ -486,15 +671,15 @@ namespace QuiGigAPI.Controllers
                             {
                                 bool isUserPushNotify = Util.GetNotificationValue(NotificationEnum.RECEIVED_BID.ToString(), Convert.ToString(NotificationCategoryEnum.PUSH_NOTIFICATION), model.UserID, context);
                                 if (proposalCount > 3)
-                                    Util.SaveActivityProposal(context, "Your bid is not in top 3 go to project & unlock, So customer can view your bid & proposal", model.UserID, model.UserID, ActivityType.Hire.ToString(), model.JobID, "ServiceProvider", isUserPushNotify, false, proposal.ID);
+                                    Util.SaveActivityProposal(context, "Your bid is not in top 3 go to project & unlock, So customer can view your bid & proposal", model.UserID, model.UserID, ActivityType.Hire.ToString(), postedJob.ID, "ServiceProvider", isUserPushNotify, false, proposalId);
                                 else
-                                    Util.SaveActivityProposal(context, "Congratulations! Your bid is in the First Three!", model.UserID, model.UserID, ActivityType.Hire.ToString(), model.JobID, "ServiceProvider", isUserPushNotify, false, proposal.ID);
+                                    Util.SaveActivityProposal(context, "Congratulations! Your bid is in the First Three!", model.UserID, model.UserID, ActivityType.Hire.ToString(), postedJob.ID, "ServiceProvider", isUserPushNotify, false, proposalId);
 
-                                Util.SaveActivityProposal(context, "Bid Posted: " + postedJob.JobTitle, model.UserID, model.UserID, ActivityType.Hire.ToString(), model.JobID, "ServiceProvider", isUserPushNotify, false, proposal.ID);
+                                Util.SaveActivityProposal(context, "Bid Posted: " + postedJob.JobTitle, model.UserID, model.UserID, ActivityType.Hire.ToString(), postedJob.ID, "ServiceProvider", isUserPushNotify, false, proposalId);
 
                                 // //check user push notification setting
                                 bool isPushNotify = Util.GetNotificationValue(NotificationEnum.RECEIVED_BID.ToString(), Convert.ToString(NotificationCategoryEnum.PUSH_NOTIFICATION), postedJob.UserID, context);
-                                Util.SaveActivity(context, "Recieved a Bid:" + postedJob.JobTitle, model.UserID, postedJob.UserID, ActivityType.Hire.ToString(), postedJob.ID, "Customer", isPushNotify, false);
+                                Util.SaveActivityProposalNew(context, "Recieved a Bid:" + postedJob.JobTitle, model.UserID, postedJob.UserID, ActivityType.Hire.ToString(), postedJob.ID, "Customer", isPushNotify, false, proposalId);
 
                                 //check user email notification setting
                                 bool isUsernotify = Util.GetNotificationValue(NotificationEnum.RECEIVED_BID.ToString(), Convert.ToString(NotificationCategoryEnum.EMAIL_NOTIFICATION), proposal.Job.UserID, context);
@@ -582,12 +767,13 @@ namespace QuiGigAPI.Controllers
                     success = true;
                     message = "Save successfully.";
                     var proposal = context.Proposals.Where(x => x.ID == model.ProposalId && x.IsActive == true && x.IsDelete == false).FirstOrDefault();
-
+                    proposal.ProposalStatus = ProposalStatus.Accepted.ToString();
+                    context.SaveChanges();
                     if (proposal != null)
                     {
                         // //check user push notification setting
                         bool isPushNotify = Util.GetNotificationValue(NotificationEnum.HIRING.ToString(), Convert.ToString(NotificationCategoryEnum.PUSH_NOTIFICATION), proposal.UserID, context);
-                        Util.SaveActivity(context, "Received a offer for the order " + proposal.Job.JobTitle, model.UserId, proposal.UserID, ActivityType.Accepted.ToString(), proposal.JobID, "ServiceProvider", isPushNotify, false);
+                        Util.SaveActivityHired(context, "Offer Recieved: " + proposal.Job.JobTitle, model.UserId, proposal.UserID, ActivityType.Accepted.ToString(), proposal.JobID, "ServiceProvider", isPushNotify, false, model.ProposalId, hire.ID);
 
                         // //check user email notification setting
                         bool isNotify = Util.GetNotificationValue(NotificationEnum.HIRING.ToString(), Convert.ToString(NotificationCategoryEnum.EMAIL_NOTIFICATION), proposal.UserID, context);
@@ -697,7 +883,12 @@ namespace QuiGigAPI.Controllers
                                     #endregion
                                 }
                             }
+                            proposal.ProposalStatus = ProposalStatus.Pending.ToString();
+                            proposal.SPStatus = null;
+                            proposal.CustomerStatus = null;
+                            context.SaveChanges();
                         }
+
                     }
                 }
                 catch (Exception ex)
@@ -760,7 +951,7 @@ namespace QuiGigAPI.Controllers
                         JobID = y.JobID,
                         ProposalID = y.ProposalID.Value,
                         UserID = y.UserID,
-                        location = y.location,
+                        Location = y.location,
                         CustomerStatus = y.CustomerStatus,
                         IsUnlimitedBidView = y.IsUnlimitedBidView,
                         SPStatus = y.SPStatus,
@@ -793,7 +984,7 @@ namespace QuiGigAPI.Controllers
                         StartDate = Convert.ToDateTime(y.StartDate),
                         ProfilePic = y.ProfilePic,
                         IsBidLock = y.IsBidLock,
-                        location = y.location,
+                        Location = y.location,
                         Duration = Convert.ToInt32(y.Duration),
                         UserName = y.UserName,
                         MyGigsCount = Convert.ToInt32(y.MyGigsCount),
@@ -1358,5 +1549,60 @@ namespace QuiGigAPI.Controllers
         //        RUrl = rUrl
         //    });
         //}
+
+        [HttpPost]
+        [Route("api/GetHiredDetail")]
+        public IHttpActionResult GetHiredDetail(HireViewModel viewModel)
+        {
+            bool success = false;
+            var messsage = "";
+            HiredDetailModel model = new HiredDetailModel();
+            try
+            {
+                var proposal = context.Proposals.Where(x => x.ID == viewModel.ProposalId && x.IsActive == true).FirstOrDefault();
+                model.HiredNumber = proposal.ID;
+                model.HiredJobId = proposal.JobID;
+                model.HiredUserImage = proposal.AspNetUser.UserDetails2.Where(x => x.UserID == proposal.UserID).Select(x => x.ProfilePic == null ? "https://s3.us-east-2.amazonaws.com/quigigstatic/profile-progress-avtar.svg" : x.ProfilePic).FirstOrDefault();
+                model.HiredUser = proposal.AspNetUser.UserDetails2.Where(x => x.UserID == proposal.UserID).Select(x => x.FirstName).FirstOrDefault();
+                model.HiredCreatedDate = Util.TimeAgo(Convert.ToDateTime(proposal.AspNetUser.UserDetails2.Where(x => x.UserID == proposal.UserID).Select(x => x.CreatedDate).FirstOrDefault()));
+                model.HiredStartDate = Convert.ToDateTime(proposal.StartDate).ToString("MM/dd/yyyy HH:mm:ss");
+                model.HiredDuration = proposal.Duration;
+                model.HiredUserEmail = context.AspNetUsers.Where(x => x.Id == proposal.UserID).Select(x => x.Email).FirstOrDefault();
+                model.HiredUserLocation = context.UserAddresses.Where(x => x.UserID == proposal.UserID).Select(x => x.City + ", " + x.State).FirstOrDefault();
+                model.HiredDescription = proposal.Description;
+                model.HiredAmount = proposal.Amount;
+                model.HiredServiceName = proposal.Job.JobTitle;
+                model.ThumbsUp = context.ReviewRatings.Where(x => x.ToID == proposal.UserID && x.ThumbsValue == true).Count();
+                model.ThumbsDown = context.ReviewRatings.Where(x => x.ToID == proposal.UserID && x.ThumbsValue == false).Count();
+                model.HiredJobCount = context.Proposals.Where(x => x.UserID == proposal.UserID && x.IsActive == true && x.CustomerStatus == ProposalStatus.Completed.ToString() && x.SPStatus == ProposalStatus.Completed.ToString()).Count();
+                model.HiredPhoneNo = context.AspNetUsers.Where(x => x.Id == proposal.UserID).Select(x => x.PhoneNumber).FirstOrDefault();
+                model.HiredQuestionOption = context.JobQuestionOptions.Where(x => x.JobID == proposal.JobID).Select(z => new MatchingOrderOptionViewModel
+                {
+                    QuestionTitle = z.QuestionOption.QuestionMaster.QuestionTitle,
+                    OptionID = z.OptionID,
+                    OtherAnswer = z.OtherAnswer,
+                    OptionHeading = z.QuestionOption.OptionHeading,
+                    Placeholder = z.QuestionOption.Placeholder,
+                    OrderOptionAttachList = z.JobOptionAttachments.Select(a => new OrderOptionAttachViewModel
+                    {
+                        JobOptionID = a.JobQuestionOptionsID,
+                        NewName = a.NewName,
+                        Path = a.Path,
+                        Description = a.Description
+                    }).ToList(),
+                }).ToList();
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                messsage = ex.Message;
+            }
+            return Ok(new
+            {
+                Success = success,
+                Message = messsage,
+                Result = model
+            });
+        }
     }
 }

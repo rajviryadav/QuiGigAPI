@@ -77,6 +77,8 @@ namespace QuiGigAPI.Common
             activity.FromID = fromUserId;
             activity.ToID = toUserId;
             activity.ActivityType = activityType;
+            activity.ProposalId = proposalId;
+            activity.JobId = jobId;
             activity.IsNotification = isNotification;
             if (activityType == ProfileParameterEnum.SIGNUP.ToString())
                 activity.RedirectPath = "#";
@@ -84,6 +86,27 @@ namespace QuiGigAPI.Common
                 activity.RedirectPath = "/order-detail?key=" + Encrypt(userType) + "&param1=" + jobId + "&param2=" + proposalId;
             else
                 activity.RedirectPath = "/order-detail?key=" + Encrypt(userType) + "&param1=" + jobId;
+            activity.IsRead = false;
+            activity.IsActive = true;
+            activity.IsDelete = false;
+            activity.CreatedDate = DateTime.UtcNow;
+            activity.UpdatedDate = DateTime.UtcNow;
+            context.Activities.Add(activity);
+            context.SaveChanges();
+        }
+        public static void SaveActivityProposalNew(QuiGigAPIEntities context, string message, string fromUserId, string toUserId, string activityType, long jobId, string userType, bool isNotification, bool isRead, long proposalId)
+        {
+            Activity activity = new Activity();
+            activity.Message = message;
+            activity.FromID = fromUserId;
+            activity.ToID = toUserId;
+            activity.ActivityType = activityType;
+            activity.IsNotification = isNotification;
+            if (activityType == ProfileParameterEnum.SIGNUP.ToString())
+                activity.RedirectPath = "#";
+            activity.RedirectPath = "/order-detail?key=" + Encrypt(userType) + "&param1=" + jobId;
+            activity.JobId = jobId;
+            activity.ProposalId = proposalId;
             activity.IsRead = false;
             activity.IsActive = true;
             activity.IsDelete = false;
@@ -113,6 +136,52 @@ namespace QuiGigAPI.Common
             context.Activities.Add(activity);
             context.SaveChanges();
             return activity.ID;
+        }
+        public static long SaveActivitySignUp(QuiGigAPIEntities context, string message, string fromUserId, string toUserId, string activityType, long jobId, string userType, bool isNotification, bool isRead)
+        {
+            Activity activity = new Activity();
+            activity.Message = message;
+            activity.FromID = fromUserId;
+            activity.ToID = toUserId;
+            activity.ActivityType = activityType;
+            activity.IsNotification = isNotification;
+            if (activityType == ProfileParameterEnum.SIGNUP.ToString())
+                activity.RedirectPath = "#";
+            else
+                activity.RedirectPath = "/order-detail?key=" + Encrypt(userType) + "&param1=" + jobId;         
+            activity.IsRead = false;
+            activity.IsActive = true;
+            activity.IsDelete = false;
+            activity.CreatedDate = DateTime.UtcNow;
+            activity.UpdatedDate = DateTime.UtcNow;
+            context.Activities.Add(activity);
+            context.SaveChanges();
+            return activity.ID;
+        }
+        public static void SaveActivityHired(QuiGigAPIEntities context, string message, string fromUserId, string toUserId, string activityType, long jobId, string userType, bool isNotification, bool isRead, long proposalId, long hiredId)
+        {
+            Activity activity = new Activity();
+            activity.Message = message;
+            activity.FromID = fromUserId;
+            activity.ToID = toUserId;
+            activity.ActivityType = activityType;
+            activity.IsNotification = isNotification;
+            if (activityType == ProfileParameterEnum.SIGNUP.ToString())
+                activity.RedirectPath = "#";
+            else if (proposalId > 0)
+                activity.RedirectPath = "/order-detail?key=" + Encrypt(userType) + "&param1=" + jobId + "&param2=" + proposalId;
+            else
+                activity.RedirectPath = "/order-detail?key=" + Encrypt(userType) + "&param1=" + jobId;
+            activity.JobId = jobId;
+            activity.ProposalId = proposalId;
+            activity.HiredId = hiredId;
+            activity.IsRead = false;
+            activity.IsActive = true;
+            activity.IsDelete = false;
+            activity.CreatedDate = DateTime.UtcNow;
+            activity.UpdatedDate = DateTime.UtcNow;
+            context.Activities.Add(activity);
+            context.SaveChanges();
         }
         public static bool GetNotificationValue(string notificationType, string notificationCat, string userId, QuiGigAPIEntities context)
         {

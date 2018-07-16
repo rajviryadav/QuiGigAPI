@@ -255,7 +255,7 @@ namespace QuiGigAPI.Controllers
 
         [HttpPost]
         [Route("api/SaveOrderForm")]
-        public IHttpActionResult SaveOrderForm(ServiceModel model)
+        public async Task<IHttpActionResult> SaveOrderForm(ServiceModel model)
         {
             bool success = false;
             var messsage = "";
@@ -267,7 +267,6 @@ namespace QuiGigAPI.Controllers
                 if (userExist.EmailConfirmed)
                 {
                     var userDetail = context.UserDetails.Where(x => x.UserID == model.UserId).FirstOrDefault();
-                    var userCurrentPlan = context.UserPlans.Where(x => x.UserID == model.UserId).FirstOrDefault();
                     var featurePostOrder = context.Features.Where(x => x.UniqueCode == "POST_ORDER").FirstOrDefault();
                     var featureVal = featurePostOrder.PlanDurationFeatures.FirstOrDefault();
                     if (userDetail.BidPoints >= Convert.ToInt32(featureVal.FeatureValue))
@@ -291,11 +290,11 @@ namespace QuiGigAPI.Controllers
                                     int totalTime = Convert.ToInt32(parmSett.Value) + 5;
                                     if (parmSett.ValueType == ValueTypeEnum.Hourly.ToString())
                                         job.JobExpireDate = DateTime.UtcNow.AddHours(totalTime).AddMinutes(30);
-                                    if (parmSett.ValueType == ValueTypeEnum.Monthly.ToString())
+                                    else if (parmSett.ValueType == ValueTypeEnum.Monthly.ToString())
                                         job.JobExpireDate = DateTime.UtcNow.AddMonths(Convert.ToInt32(parmSett.Value));
-                                    if (parmSett.ValueType == ValueTypeEnum.Yearly.ToString())
+                                    else if(parmSett.ValueType == ValueTypeEnum.Yearly.ToString())
                                         job.JobExpireDate = DateTime.UtcNow.AddYears(Convert.ToInt32(parmSett.Value));
-                                    if (parmSett.ValueType == ValueTypeEnum.Days.ToString())
+                                    else
                                         job.JobExpireDate = DateTime.UtcNow.AddDays(Convert.ToInt32(parmSett.Value));
                                 }
                                 job.IsActive = true;
@@ -318,84 +317,85 @@ namespace QuiGigAPI.Controllers
                                     jobQuesOption.CreatedDate = DateTime.UtcNow;
                                     context.JobQuestionOptions.Add(jobQuesOption);
                                     context.SaveChanges();
-                                    if (optionList.FileUploadList != null)
-                                    {
-                                        foreach (var fileList in optionList.FileUploadList)
-                                        {
-                                            JobOptionAttachment jobAttachment = new JobOptionAttachment();
-                                            jobAttachment.JobQuestionOptionsID = jobQuesOption.ID;
-                                            jobAttachment.OriginalName = fileList.OriginalName;
-                                            jobAttachment.NewName = fileList.NewName;
-                                            jobAttachment.Path = fileList.Path;
-                                            jobAttachment.Description = fileList.Description;
-                                            jobAttachment.AttachmentExt = fileList.AttachmentExt;
-                                            jobAttachment.AttachmentType = fileList.AttachmentType;
-                                            jobAttachment.AttachmentSize = fileList.AttachmentSize;
-                                            jobAttachment.CreatedDate = DateTime.UtcNow;
-                                            context.JobOptionAttachments.Add(jobAttachment);
-                                            context.SaveChanges();
-                                        }
-                                    }
+                                    //if (optionList.FileUploadList != null)
+                                    //{
+                                    //    foreach (var fileList in optionList.FileUploadList)
+                                    //    {
+                                    //        JobOptionAttachment jobAttachment = new JobOptionAttachment();
+                                    //        jobAttachment.JobQuestionOptionsID = jobQuesOption.ID;
+                                    //        jobAttachment.OriginalName = fileList.OriginalName;
+                                    //        jobAttachment.NewName = fileList.NewName;
+                                    //        jobAttachment.Path = fileList.Path;
+                                    //        jobAttachment.Description = fileList.Description;
+                                    //        jobAttachment.AttachmentExt = fileList.AttachmentExt;
+                                    //        jobAttachment.AttachmentType = fileList.AttachmentType;
+                                    //        jobAttachment.AttachmentSize = fileList.AttachmentSize;
+                                    //        jobAttachment.CreatedDate = DateTime.UtcNow;
+                                    //        context.JobOptionAttachments.Add(jobAttachment);
+                                    //        context.SaveChanges();
+                                    //    }
+                                    //}
                                 }
                                 #endregion
+
                                 #region Save Activity and Email send
 
                                 Util.SaveActivity(context, "New Gigs: " + job.JobTitle, model.UserId, model.UserId, ActivityType.PostedJob.ToString(), job.ID, "Customer", true, false);
+                                //await UpdateJob(model.ServiceID, model.CityName, model.StateName, model.UserId, job.JobTitle, job.ID);
+                                //var userService = context.UserServices.Where(x => x.ServiceID == model.ServiceID).ToList();
 
-                                var userService = context.UserServices.Where(x => x.ServiceID == model.ServiceID).ToList();
+                                //foreach (var activity in userService)
+                                //{
+                                //    if (model.UserId != activity.UserID)
+                                //    {
+                                //        if (!string.IsNullOrEmpty(model.CityName) && !string.IsNullOrEmpty(model.StateName))
+                                //        {
+                                //            var userAddress = context.UserAddresses.Where(x => x.City.ToLower() == model.CityName.ToLower() && x.State.ToLower() == model.StateName.ToLower() && x.UserID == activity.UserID).FirstOrDefault();
+                                //            if (userAddress != null)
+                                //            {
+                                //                var toUserExist = UserManager.FindById(activity.UserID);
+                                //                if (toUserExist.EmailConfirmed)
+                                //                {
+                                //                    //check sp push notification setting
+                                //                    var isPushNotify = Util.GetNotificationValue(NotificationEnum.MATCHING_ORDERS.ToString(), Convert.ToString(NotificationCategoryEnum.PUSH_NOTIFICATION), activity.UserID, context);
 
-                                foreach (var activity in userService)
-                                {
-                                    if (model.UserId != activity.UserID)
-                                    {
-                                        if (!string.IsNullOrEmpty(model.CityName) && !string.IsNullOrEmpty(model.StateName))
-                                        {
-                                            var userAddress = context.UserAddresses.Where(x => x.City.ToLower() == model.CityName.ToLower() && x.State.ToLower() == model.StateName.ToLower() && x.UserID == activity.UserID).FirstOrDefault();
-                                            if (userAddress != null)
-                                            {
-                                                var toUserExist = UserManager.FindById(activity.UserID);
-                                                if (toUserExist.EmailConfirmed)
-                                                {
-                                                    //check sp push notification setting
-                                                    var isPushNotify = Util.GetNotificationValue(NotificationEnum.MATCHING_ORDERS.ToString(), Convert.ToString(NotificationCategoryEnum.PUSH_NOTIFICATION), activity.UserID, context);
+                                //                    Util.SaveActivity(context, "New Gig: " + job.JobTitle, model.UserId, activity.UserID, ActivityType.PostedJob.ToString(), job.ID, "ServiceProvider", isPushNotify, false);
+                                //                    //check sp email notification setting
+                                //                    bool isEmailNotify = Util.GetNotificationValue(NotificationEnum.MATCHING_ORDERS.ToString(), NotificationCategoryEnum.EMAIL_NOTIFICATION.ToString(), activity.UserID, context);
+                                //                    if (isEmailNotify)
+                                //                    {
+                                //                        var fromUserExist = UserManager.FindById(model.UserId);
 
-                                                    Util.SaveActivity(context, "New Gig: " + job.JobTitle, model.UserId, activity.UserID, ActivityType.PostedJob.ToString(), job.ID, "ServiceProvider", isPushNotify, false);
-                                                    //check sp email notification setting
-                                                    bool isEmailNotify = Util.GetNotificationValue(NotificationEnum.MATCHING_ORDERS.ToString(), NotificationCategoryEnum.EMAIL_NOTIFICATION.ToString(), activity.UserID, context);
-                                                    if (isEmailNotify)
-                                                    {
-                                                        var fromUserExist = UserManager.FindById(model.UserId);
+                                //                        if (fromUserExist != null && toUserExist != null)
+                                //                        {
+                                //                            var fromUserDetail = context.UserDetails.Where(x => x.UserID == fromUserExist.Id).FirstOrDefault();
+                                //                            var toUserDetail = context.UserDetails.Where(x => x.UserID == toUserExist.Id).FirstOrDefault();
 
-                                                        if (fromUserExist != null && toUserExist != null)
-                                                        {
-                                                            var fromUserDetail = context.UserDetails.Where(x => x.UserID == fromUserExist.Id).FirstOrDefault();
-                                                            var toUserDetail = context.UserDetails.Where(x => x.UserID == toUserExist.Id).FirstOrDefault();
-
-                                                            #region Email Sending Code
-                                                            try
-                                                            {
-                                                                string emailBody = CommonLib.GetEmailTemplateValue("PostNewJob/Body");
-                                                                string emailSubject = "QuiGig - New matching order";
-                                                                string strFromEmailAddress = ConfigurationManager.AppSettings["FromAddress"].ToString();
-                                                                var path = Request.RequestUri.Scheme + "://" + Request.RequestUri.Authority;
-                                                                emailBody = emailBody.Replace("@@@Path", path);
-                                                                emailBody = emailBody.Replace("@@@JobTitle", job.JobTitle);
-                                                                emailBody = emailBody.Replace("@@@FromUserName", fromUserDetail.FirstName);
-                                                                emailBody = emailBody.Replace("@@@ToUserName", toUserDetail.FirstName);
-                                                                CommonLib.SendMail(strFromEmailAddress, toUserExist.Email, emailSubject, emailBody);
-                                                            }
-                                                            catch (Exception ex)
-                                                            {
-                                                                messsage = ex.Message;
-                                                            }
-                                                            #endregion
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                //                            #region Email Sending Code
+                                //                            try
+                                //                            {
+                                //                                string emailBody = CommonLib.GetEmailTemplateValue("PostNewJob/Body");
+                                //                                string emailSubject = "QuiGig - New matching order";
+                                //                                string strFromEmailAddress = ConfigurationManager.AppSettings["FromAddress"].ToString();
+                                //                                var path = Request.RequestUri.Scheme + "://" + Request.RequestUri.Authority;
+                                //                                emailBody = emailBody.Replace("@@@Path", path);
+                                //                                emailBody = emailBody.Replace("@@@JobTitle", job.JobTitle);
+                                //                                emailBody = emailBody.Replace("@@@FromUserName", fromUserDetail.FirstName);
+                                //                                emailBody = emailBody.Replace("@@@ToUserName", toUserDetail.FirstName);
+                                //                                CommonLib.SendMail(strFromEmailAddress, toUserExist.Email, emailSubject, emailBody);
+                                //                            }
+                                //                            catch (Exception ex)
+                                //                            {
+                                //                                messsage = ex.Message;
+                                //                            }
+                                //                            #endregion
+                                //                        }
+                                //                    }
+                                //                }
+                                //            }
+                                //        }
+                                //    }
+                                //}
 
                                 #endregion
 
@@ -488,6 +488,91 @@ namespace QuiGigAPI.Controllers
                 Message = messsage,
                 JobId = jobId
             });
+        }
+
+
+        [HttpPost]
+        [Route("api/UpdateJobActivity")]
+        public async Task<IHttpActionResult> UpdateJobActivity(JobModel model)
+        {
+            bool success = false;
+            var messsage = "";
+            try
+            {
+                #region Save Activity and Email send               
+                var jobDetail = context.Jobs.Where(x => x.ID == model.JobId).FirstOrDefault();
+                if (jobDetail != null)
+                {
+                    var userService = context.UserServices.Where(x => x.ServiceID == jobDetail.ServiceID).ToList();
+
+                    foreach (var activity in userService)
+                    {
+                        if (model.UserId != activity.UserID)
+                        {
+                            if (!string.IsNullOrEmpty(jobDetail.CityName) && !string.IsNullOrEmpty(jobDetail.StateName))
+                            {
+                                var userAddress = context.UserAddresses.Where(x => x.City.ToLower() == jobDetail.CityName.ToLower() && x.State.ToLower() == jobDetail.StateName.ToLower() && x.UserID == activity.UserID).FirstOrDefault();
+                                if (userAddress != null)
+                                {
+                                    var toUserExist = UserManager.FindById(activity.UserID);
+                                    if (toUserExist.EmailConfirmed)
+                                    {
+                                        //check sp push notification setting
+                                        var isPushNotify = Util.GetNotificationValue(NotificationEnum.MATCHING_ORDERS.ToString(), Convert.ToString(NotificationCategoryEnum.PUSH_NOTIFICATION), activity.UserID, context);
+
+                                        Util.SaveActivity(context, "New Gig: " + jobDetail.JobTitle, model.UserId, activity.UserID, ActivityType.PostedJob.ToString(), jobDetail.ID, "ServiceProvider", isPushNotify, false);
+                                        //check sp email notification setting
+                                        bool isEmailNotify = Util.GetNotificationValue(NotificationEnum.MATCHING_ORDERS.ToString(), NotificationCategoryEnum.EMAIL_NOTIFICATION.ToString(), activity.UserID, context);
+                                        if (isEmailNotify)
+                                        {
+                                            var toUserDetail = context.UserDetails.Where(x => x.UserID == toUserExist.Id).FirstOrDefault();
+
+                                            #region Email Sending Code
+                                            try
+                                            {
+                                                string emailBody = CommonLib.GetEmailTemplateValue("PostNewJob/Body");
+                                                string emailSubject = "QuiGig - New matching order";
+                                                string strFromEmailAddress = ConfigurationManager.AppSettings["FromAddress"].ToString();
+                                                var path = Request.RequestUri.Scheme + "://" + Request.RequestUri.Authority;
+                                                emailBody = emailBody.Replace("@@@Path", path);
+                                                emailBody = emailBody.Replace("@@@JobTitle", jobDetail.JobTitle);
+                                                emailBody = emailBody.Replace("@@@ToUserName", toUserDetail.FirstName);
+                                                CommonLib.SendMail(strFromEmailAddress, toUserExist.Email, emailSubject, emailBody);
+                                            }
+                                            catch (Exception ex)
+                                            {
+                                                return Ok(new
+                                                {
+                                                    Success = false,
+                                                    Message = ex.Message
+                                                });
+                                            }
+                                            #endregion
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    success = true;
+                    messsage = "Update successfully.";
+                }
+                else
+                {
+                    messsage = "Invalid job detail";
+                }
+
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                messsage = ex.Message;
+            }
+            return Ok(new
+            {
+                Success = success,
+                Message = messsage
+            }); 
         }
 
         [HttpPost]

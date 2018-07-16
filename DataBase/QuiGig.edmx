@@ -988,6 +988,7 @@ warning 6002: The table/view 'QuiGig.dbo.CityServicesTemp' does not have a prima
           <Property Name="UpdatedByID" Type="nvarchar" MaxLength="128" />
           <Property Name="OrderNo" Type="int" Nullable="false" />
           <Property Name="Longtail" Type="nvarchar(max)" />
+          <Property Name="ServiceType" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="StateMaster">
           <Key>
@@ -7581,6 +7582,7 @@ warning 6002: The table/view 'QuiGig.dbo.StateServiceMap' does not have a primar
           <NavigationProperty Name="Services1" Relationship="QuiGigAPIModel.FK_Services_Services" FromRole="Service" ToRole="Service1" />
           <NavigationProperty Name="Service1" Relationship="QuiGigAPIModel.FK_Services_Services" FromRole="Service1" ToRole="Service" />
           <NavigationProperty Name="UserServices" Relationship="QuiGigAPIModel.FK_UserServices_Services" FromRole="Service" ToRole="UserService" />
+          <Property Name="ServiceType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="StateMaster">
           <Key>
@@ -11375,6 +11377,7 @@ warning 6002: The table/view 'QuiGig.dbo.StateServiceMap' does not have a primar
           <EntitySetMapping Name="Services">
             <EntityTypeMapping TypeName="QuiGigAPIModel.Service">
               <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
                 <ScalarProperty Name="Longtail" ColumnName="Longtail" />
                 <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
                 <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />

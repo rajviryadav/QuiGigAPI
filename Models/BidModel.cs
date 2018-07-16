@@ -21,6 +21,7 @@ namespace QuiGigAPI.Models
     public class MyGigModel
     {
         public long ID { get; set; }
+        public long? ProposalId { get; set; }
         public string JobTitle { get; set; }
         public string ServicePic { get; set; }
         public int? ReceivedBid { get; set; }

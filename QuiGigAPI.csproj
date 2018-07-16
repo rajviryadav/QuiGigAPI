@@ -231,6 +231,7 @@
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\OrderFormController.cs" />
+    <Compile Include="Controllers\QuigController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SocialLoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -898,6 +899,7 @@
     <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Models\NotificationModel.cs" />
     <Compile Include="Models\PortfolioModel.cs" />
+    <Compile Include="Models\QuigsPackageModel.cs" />
     <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="Models\UserDetailModel.cs" />
     <Compile Include="Models\UserServiceModel.cs" />
@@ -928,7 +930,9 @@
     </Content>
     <Content Include="Scripts\jquery.signalR-2.2.3.js" />
     <Content Include="Scripts\jquery.signalR-2.2.3.min.js" />
-    <Content Include="Templates\Template.xml" />
+    <Content Include="Templates\Template.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

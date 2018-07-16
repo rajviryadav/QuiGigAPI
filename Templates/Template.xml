@@ -3533,7 +3533,7 @@ As a token of our appreciation, we have given you 500 free Quigs, just for signi
                                                                                     <td valign='top' align='center'>
                                                                                         <div class="contentEditableContainer contentImageEditable">
                                                                                             <div class="contentEditable">
-                                                                                                <img src="@@@Path/Content/images/line.png" style="margin-top:30px;" width='251' height='43' alt='' data-default="placeholder" data-max-width="560" />
+                                                                                                <img src="https://s3.us-east-2.amazonaws.com/quigigstatic/line.png" style="margin-top:30px;" width='251' height='43' alt='' data-default="placeholder" data-max-width="560" />
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>
@@ -3557,12 +3557,10 @@ As a token of our appreciation, we have given you 500 free Quigs, just for signi
                                                                                         <div class="contentEditableContainer contentTextEditable">
                                                                                             <div class="contentEditable" align='center'>
                                                                                                 <p>
-                                                                                   New matching order "@@@JobTitle" has been posted by @@@FromUserName
+                                                                                   New matching order "@@@JobTitle" has been posted
                                                                                                     <br />                                                                                                 
                                                                                                     <br />
-                                                                                                    Thanks Regards,
-                                                                                                    <br />
-                                                                                                    <span style='color:#222222;'>@@@FromUserName</span>
+                                                                                                    Thanks Regards                                                                                                 
                                                                                                 </p>
                                                                                             </div>
                                                                                         </div>

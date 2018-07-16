@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using RestSharp;
 using System.Security.Claims;
 using static QuiGigAPI.Controllers.CommonController;
+using QuiGigAPI.ViewModel;
 
 namespace QuiGigAPI.Controllers
 {
@@ -103,6 +104,15 @@ namespace QuiGigAPI.Controllers
                         {
                             case SignInStatus.Success:
                                 {
+
+                                    if (UserManager.IsInRole(user.Id, UserRoleEnum.SuperAdmin.ToString()))
+                                        currRole = UserRoleEnum.SuperAdmin.ToString();
+                                    else if (UserManager.IsInRole(user.Id, UserRoleEnum.SubAdmin.ToString()))
+                                        currRole = UserRoleEnum.SubAdmin.ToString();
+                                    else if (UserManager.IsInRole(user.Id, UserRoleEnum.ServiceProvider.ToString()))
+                                        currRole = UserRoleEnum.ServiceProvider.ToString();
+                                    else
+                                        currRole = UserRoleEnum.Customer.ToString();
                                     var detail = context.UserDetails.Where(a => a.UserID == user.Id).FirstOrDefault();
                                     if (detail.IsDelete)
                                     {
@@ -110,23 +120,26 @@ namespace QuiGigAPI.Controllers
                                         {
                                             Success = false,
                                             Message = "Currently your account is de-activated please contact to admin",
-                                            UserName = userName,
-                                            UserId = userId,
+                                            UserName = detail.FirstName,
+                                            UserId = detail.UserID,
+                                            CurrentRole = currRole,
+                                            IsEmailConfirmed = true
+                                        });
+                                    }
+                                    else if (!user.EmailConfirmed)
+                                    {
+                                        return Ok(new
+                                        {
+                                            Success = true,
+                                            Message = "Please verify your email.",
+                                            UserName = detail.FirstName,
+                                            UserId = detail.UserID,
                                             CurrentRole = currRole,
                                             IsEmailConfirmed = false
                                         });
                                     }
                                     else
                                     {
-                                        if (UserManager.IsInRole(user.Id, UserRoleEnum.SuperAdmin.ToString()))
-                                            currRole = UserRoleEnum.SuperAdmin.ToString();
-                                        else if (UserManager.IsInRole(user.Id, UserRoleEnum.SubAdmin.ToString()))
-                                            currRole = UserRoleEnum.SubAdmin.ToString();
-                                        else if (UserManager.IsInRole(user.Id, UserRoleEnum.ServiceProvider.ToString()))
-                                            currRole = UserRoleEnum.ServiceProvider.ToString();
-                                        else
-                                            currRole = UserRoleEnum.Customer.ToString();
-
                                         return Ok(new
                                         {
                                             Success = true,
@@ -143,8 +156,8 @@ namespace QuiGigAPI.Controllers
                                 {
                                     return Ok(new
                                     {
-                                        success = false,
-                                        message = "This account is locked, please contact administrator to unlock account.",
+                                        Success = false,
+                                        Message = "This account is locked, please contact administrator to unlock account.",
                                         UserName = userName,
                                         UserId = userId,
                                         CurrentRole = currRole,
@@ -155,8 +168,8 @@ namespace QuiGigAPI.Controllers
                                 {
                                     return Ok(new
                                     {
-                                        success = false,
-                                        message = "This account is locked, please contact administrator to unlock account.",
+                                        Success = false,
+                                        Message = "This account is locked, please contact administrator to unlock account.",
                                         UserName = userName,
                                         UserId = userId,
                                         CurrentRole = currRole,
@@ -166,7 +179,7 @@ namespace QuiGigAPI.Controllers
                             case SignInStatus.Failure:
                                 return Ok(new
                                 {
-                                    success = false,
+                                    Success = false,
                                     Message = "Invalid login attempt.",
                                     UserName = userName,
                                     UserId = userId,
@@ -176,8 +189,8 @@ namespace QuiGigAPI.Controllers
                             default:
                                 return Ok(new
                                 {
-                                    success = false,
-                                    message = "Invalid login attempt.",
+                                    Success = false,
+                                    Message = "Invalid login attempt.",
                                     UserName = userName,
                                     UserId = userId,
                                     CurrentRole = currRole,
@@ -189,11 +202,12 @@ namespace QuiGigAPI.Controllers
                     {
                         return Ok(new
                         {
-                            success = false,
-                            message = "Invalid login attempt.",
+                            Success = false,
+                            Message = "You are not register with us.",
                             UserName = userName,
                             UserId = userId,
-                            CurrentRole = currRole
+                            CurrentRole = currRole,
+                            IsEmailConfirmed = false
                         });
                     }
                 }
@@ -201,11 +215,12 @@ namespace QuiGigAPI.Controllers
                 {
                     return Ok(new
                     {
-                        success = false,
-                        message = ex.Message,
+                        Success = false,
+                        Message = ex.Message,
                         UserName = userName,
                         UserId = userId,
-                        CurrentRole = currRole
+                        CurrentRole = currRole,
+                        IsEmailConfirmed = false
                     });
                 }
             }
@@ -242,13 +257,6 @@ namespace QuiGigAPI.Controllers
                         if (result.Succeeded)
                         {
                             var userRole = UserRoleEnum.Customer.ToString();
-                            //if (!string.IsNullOrEmpty(model.UserRole))
-                            //{
-                            //    if (model.UserRole == UserRoleEnum.ServiceProvider.ToString())
-                            //    {
-                            //        userRole = UserRoleEnum.ServiceProvider.ToString();
-                            //    }
-                            //}
                             var userEmailCode = RandomStringAndNumeric(6);
 
                             UserManager.AddToRole(user.Id, userRole);
@@ -604,7 +612,8 @@ namespace QuiGigAPI.Controllers
             return Ok(new
             {
                 Success = success,
-                Message = message
+                Message = message,
+                UserId = model.UserId
             });
         }
 
@@ -704,7 +713,7 @@ namespace QuiGigAPI.Controllers
                 context.UserPlans.Add(plan);
                 context.SaveChanges();
                 Util.SaveUserWallet(context, userId, 0, "Sign Up", Convert.ToInt32(amt), 0, 0, PaymentStatus.Completed.ToString(), PaymentFromSite.QuiGig.ToString(), 0, 0, "Admin");
-                Util.SaveActivity(context, "Congratulation! You have received " + amt + " free Quigs.", userId, userId, ProfileParameterEnum.SIGNUP.ToString(), 0, role, true, false);
+                Util.SaveActivitySignUp(context, "Congratulation! You have received " + amt + " free Quigs.", userId, userId, ProfileParameterEnum.SIGNUP.ToString(), 0, role, true, false);
             }
             catch (Exception ex)
             {
@@ -985,6 +994,63 @@ namespace QuiGigAPI.Controllers
                 Message = message
             });
         }
-        #endregion                
+        #endregion
+
+        [AllowAnonymous]
+        [Route("api/SendConfirmEmail")]
+        [HttpPost]
+        public async Task<IHttpActionResult> SendConfirmEmail(UserViewModel model)
+        {
+            bool success = false;
+            var message = "";
+            try
+            {
+                var user = await UserManager.FindByIdAsync(model.UserId);
+                if (user != null)
+                {
+                    var userEmailCode = RandomStringAndNumeric(6);
+                    var detail = context.UserDetails.Where(a => a.UserID == user.Id).FirstOrDefault();
+                    detail.UserEmailCode = userEmailCode;
+                    context.SaveChanges();
+
+                    #region Email Sending Code
+                    try
+                    {
+                        var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        string emailBody = CommonLib.GetEmailTemplateValue("VerifyAccount/Body");
+                        string emailSubject = CommonLib.GetEmailTemplateValue("VerifyAccount/Subject");
+                        string strFromEmailAddress = ConfigurationManager.AppSettings["FromAddress"].ToString();
+                        var path = Request.RequestUri.Scheme + "://" + Request.RequestUri.Authority;
+                        emailBody = emailBody.Replace("@@@Path", path);
+                        emailBody = emailBody.Replace("@@@UserName", detail.FirstName);
+                        emailBody = emailBody.Replace("@@@UserEmailCode", userEmailCode);
+                        CommonLib.SendMail(strFromEmailAddress, user.Email, emailSubject, emailBody);
+                        success = true;
+                        message = "Email send successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        return Ok(new
+                        {
+                            Success = false,
+                            Message = ex.Message
+                        });
+                    }
+                    #endregion
+                }
+                else
+                    message = "Invalid user";
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+            }
+            return Ok(new
+            {
+                Success = success,
+                Message = message,
+                UserId = model.UserId
+            });
+        }
     }
 }

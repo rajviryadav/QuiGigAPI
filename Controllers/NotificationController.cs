@@ -211,7 +211,10 @@ namespace QuiGigAPI.Controllers
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             UserImage = x.AspNetUser.UserDetails2.Select(y => y.ProfilePic).FirstOrDefault(),
                             Message = x.Message,
+                            ProposalId = x.ProposalId,
                             JobId = x.JobId,
+                            NotificationType = "Gigs",
+                            ReturnUrl = x.RedirectPath.Contains("rr5Wddu2buz5UA+G9dT9Ucj/eOlQpQPpxXStNyfzZdQ=") ? "Post" : x.RedirectPath.Contains("LQfd4/UX1OHvSY8ZHYmK8bLkBwt9L6/z9x7+jxNqxQU=") ? "Proposal" : x.ActivityType == "Accepted" ? "Accepted" : x.ActivityType == "SIGNUP" ? "SIGNUP" : "Completed",
                             IsRead = x.IsRead
                         }).ToList();
                     }
@@ -225,7 +228,10 @@ namespace QuiGigAPI.Controllers
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             UserImage = x.AspNetUser.UserDetails2.Select(y => y.ProfilePic).FirstOrDefault(),
                             Message = x.Message,
+                            ProposalId = x.ProposalId,
+                            ReturnUrl = x.RedirectPath.Contains("rr5Wddu2buz5UA+G9dT9Ucj/eOlQpQPpxXStNyfzZdQ=") ? "Post" : x.RedirectPath.Contains("LQfd4/UX1OHvSY8ZHYmK8bLkBwt9L6/z9x7+jxNqxQU=") ? "Proposal" : x.ActivityType == "Accepted" ? "Accepted" : x.ActivityType == "SIGNUP" ? "SIGNUP" : "Completed",
                             JobId = x.JobId,
+                            NotificationType = "Bids",
                             IsRead = x.IsRead
                         }).ToList();
                     }
@@ -239,13 +245,16 @@ namespace QuiGigAPI.Controllers
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             UserImage = x.AspNetUser.UserDetails2.Select(y => y.ProfilePic).FirstOrDefault(),
                             Message = x.Message,
+                            ReturnUrl = x.RedirectPath.Contains("rr5Wddu2buz5UA+G9dT9Ucj/eOlQpQPpxXStNyfzZdQ=") ? "Post" : x.RedirectPath.Contains("LQfd4/UX1OHvSY8ZHYmK8bLkBwt9L6/z9x7+jxNqxQU=") ? "Proposal" : x.ActivityType == "Accepted" ? "Accepted" : x.ActivityType == "SIGNUP" ? "SIGNUP" : "Completed",
                             JobId = x.JobId,
-                            IsRead = x.IsRead
+                            ProposalId = x.ProposalId,
+                            IsRead = x.IsRead,
+                            NotificationType = x.ActivityType == "PostedJob" ? "Gigs" : x.ActivityType == "Hire" ? "Bids" : "SIGNUP",
                         }).ToList();
                     }
-                    gigsCount = context.Activities.Where(x => x.ToID == user.UserId && x.ActivityType == "PostedJob" && x.IsActive == true && x.IsDelete == false && x.IsRead == false).Count();
-                    bidsCount = context.Activities.Where(x => x.ToID == user.UserId && x.ActivityType == "Hire" && x.IsActive == true && x.IsDelete == false && x.IsRead == false).Count();
-                    allCount = context.Activities.Where(x => x.ToID == user.UserId && x.IsActive == true && x.IsDelete == false &&  x.IsRead == false).Count();
+                    gigsCount = context.Activities.Where(x => x.ToID == user.UserId && x.ActivityType == "PostedJob" && x.IsActive == true && x.IsDelete == false && x.IsRead == false && x.IsNotification == true).Count();
+                    bidsCount = context.Activities.Where(x => x.ToID == user.UserId && x.ActivityType == "Hire" && x.IsActive == true && x.IsDelete == false && x.IsRead == false && x.IsNotification == true).Count();
+                    allCount = context.Activities.Where(x => x.ToID == user.UserId && x.IsActive == true && x.IsDelete == false &&  x.IsRead == false && x.IsNotification == true).Count();
                     status = true;
                     message = "Get List.";
                 }

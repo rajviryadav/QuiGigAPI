@@ -3373,6 +3373,7 @@
     <NavigationProperty Name="Services1" Relationship="QuiGigAPIModel.FK_Services_Services" FromRole="Service" ToRole="Service1" />
     <NavigationProperty Name="Service1" Relationship="QuiGigAPIModel.FK_Services_Services" FromRole="Service1" ToRole="Service" />
     <NavigationProperty Name="UserServices" Relationship="QuiGigAPIModel.FK_UserServices_Services" FromRole="Service" ToRole="UserService" />
+    <Property Name="ServiceType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="StateMaster">
     <Key>

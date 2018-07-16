@@ -983,6 +983,7 @@ warning 6002: The table/view 'QuiGig.dbo.CityServicesTemp' does not have a prima
     <Property Name="UpdatedByID" Type="nvarchar" MaxLength="128" />
     <Property Name="OrderNo" Type="int" Nullable="false" />
     <Property Name="Longtail" Type="nvarchar(max)" />
+    <Property Name="ServiceType" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="StateMaster">
     <Key>

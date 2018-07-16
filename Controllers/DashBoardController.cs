@@ -85,12 +85,13 @@ namespace QuiGigAPI.Controllers
                         {
                             ID = x.ID,
                             JobTitle = x.JobTitle,
+                            ProposalId = x.ProposalId,
                             ReceivedBid = x.ReceivedBid,
                             ServicePic = File.Exists(System.Web.Hosting.HostingEnvironment.MapPath(x.ServicePic)) ? x.ServicePic : "/Content/images/services-bg.jpg",
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             JobExpireDate = Convert.ToDateTime(x.JobExpireDate).ToString("MM/dd/yyyy HH:mm:ss"),
                             CurrentProposalStatus = x.CurrentProposalStatus
-                        }).ToList();
+                        }).OrderByDescending(x => x.ProposalId).ToList();
                         success = true;
                         message = "Get List";
                     }
@@ -101,12 +102,13 @@ namespace QuiGigAPI.Controllers
                         {
                             ID = x.ID,
                             JobTitle = x.JobTitle,
+                            ProposalId = x.ProposalId,
                             ReceivedBid = x.ReceivedBid,
                             ServicePic = File.Exists(System.Web.Hosting.HostingEnvironment.MapPath(x.ServicePic)) ? x.ServicePic : "/Content/images/services-bg.jpg",
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             JobExpireDate = Convert.ToDateTime(x.JobExpireDate).ToString("MM/dd/yyyy HH:mm:ss"),
                             CurrentProposalStatus = x.CurrentProposalStatus
-                        }).ToList();
+                        }).OrderByDescending(x => x.ProposalId).ToList();
                         success = true;
                         message = "Get List";
                     }
@@ -117,12 +119,13 @@ namespace QuiGigAPI.Controllers
                         {
                             ID = x.ID,
                             JobTitle = x.JobTitle,
+                            ProposalId = x.ProposalId,
                             ReceivedBid = x.ReceivedBid,
                             ServicePic = File.Exists(System.Web.Hosting.HostingEnvironment.MapPath(x.ServicePic)) ? x.ServicePic : "/Content/images/services-bg.jpg",
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             JobExpireDate = Convert.ToDateTime(x.JobExpireDate).ToString("MM/dd/yyyy HH:mm:ss"),
                             CurrentProposalStatus = x.CurrentProposalStatus
-                        }).ToList();
+                        }).OrderByDescending(x => x.ProposalId).ToList();
                         success = true;
                         message = "Get List";
                     }
@@ -168,7 +171,7 @@ namespace QuiGigAPI.Controllers
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             JobExpireDate = Convert.ToDateTime(x.JobExpireDate).ToString("MM/dd/yyyy HH:mm:ss"),
                             Amount = x.Amount
-                        }).ToList();
+                        }).OrderByDescending(x => x.JobID).ToList();
                         success = true;
                         message = "Get List";
                     }
@@ -184,7 +187,7 @@ namespace QuiGigAPI.Controllers
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             JobExpireDate = Convert.ToDateTime(x.JobExpireDate).ToString("MM/dd/yyyy HH:mm:ss"),
                             Amount = x.Amount
-                        }).ToList();
+                        }).OrderByDescending(x=>x.JobID).ToList();
                         success = true;
                         message = "Get List";
                     }
@@ -200,7 +203,7 @@ namespace QuiGigAPI.Controllers
                             CreatedDate = x.UpdatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                             JobExpireDate = Convert.ToDateTime(x.JobExpireDate).ToString("MM/dd/yyyy HH:mm:ss"),
                             Amount = x.Amount
-                        }).ToList();
+                        }).OrderByDescending(x => x.JobID).ToList();
                         success = true;
                         message = "Get List";
                     }     
@@ -217,7 +220,7 @@ namespace QuiGigAPI.Controllers
                                 ServicePic = File.Exists(System.Web.Hosting.HostingEnvironment.MapPath(x.ServicePic)) ? x.ServicePic : "/Content/images/services-bg.jpg",
                                 CreatedDate = x.CreatedDate.ToString("MM/dd/yyyy HH:mm:ss"),
                                 JobExpireDate = Convert.ToDateTime(x.JobExpireDate).ToString("MM/dd/yyyy HH:mm:ss")
-                            }).ToList();
+                            }).OrderByDescending(x => x.JobID).ToList();
                             success = true;
                             message = "Get List";
                         }
